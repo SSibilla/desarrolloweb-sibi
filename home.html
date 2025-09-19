@@ -98,7 +98,21 @@
         gap: 10px;          /* Espacio entre imágenes */
         align-items: flex-start; /* Alineación superior */
     }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+      grid-template-rows: repeat(2, auto);  /* 2 filas */
+      gap: 20px;
 
+      justify-content: center; /* centra todo el grid */
+      justify-items: center;   /* centra las imágenes dentro de su celda */
+      align-items: center;     /* centra en vertical dentro de cada celda */
+    }
+
+    .grid img {
+      width: 120px;  /* mismo tamaño para que queden parejitas */
+      height: auto;
+    }
 </style>
     </style>
 </head>
@@ -141,10 +155,10 @@
         color: rgb(255, 255, 255);
         font-style: oblique;">the smell of incense and moss fills the air...</h1></p></div></div>
         <br>
-        <div style="display: flex">
+        <div style="display: block">
         <img src="images/f2024175.gif" alt="" height="50" width="auto" style="vertical-align: middle;">
         <img src="images/f2127165.gif" alt="" height="50" width="auto" style="vertical-align: middle;">
-        <h3 style="color: rgb(241, 233, 222);margin: 11px;font-family: 'Times New Roman', Times, serif;font-size:30px; text-decoration: underline;">Lore</h3>
+        <h3 style="color: rgb(241, 233, 222);margin: 11px;font-family: 'Times New Roman', Times, serif;font-size:30px; text-decoration: underline;display: inline-block;">Lore</h3>
         <img src="images/f2127165.gif" alt="" height="50" width="auto" style="vertical-align: middle;">
         <img src="images/f2024175.gif" alt="" height="50" width="auto" style="vertical-align: middle;">
         </div>
@@ -155,13 +169,29 @@
         Además de programar [no quiero mas <img src="images/icons/random/kid10.gif" alt="" height="20px" style="vertical-align: middle;">], viciar [juegos viejos o rpgs + q nada... <img src="images/icons/random/contro.gif" alt="" height="20px" style="vertical-align: middle;">], y emplear el diseño y la creatividad tanto en el diseño de esta web, y en la vida real <img src="images/icons/random/erde025.gif" alt="" height="20px" style="vertical-align: middle;">, siempre estoy aprendiendo, probando nuevas técnicas [grax profe por explicar bien!! <img src="images/icons/random/21.gif" alt="" height="30px" style="vertical-align: middle;">] y herramientas para mejorar en el diseño de mis proyectos, e intentar compartir mi conocimiento con mis pares. <img src="images/icons/random/dcatf33.jpg" alt="" height="20px" style="vertical-align: middle;">.
 
         En este sitio vas a encontrar musica <img src="images/icons/random/speaker_left.gif" alt="" height="20px" style="vertical-align: middle;"> muy basada, diseño y inspo from the 2000s <img src="images/icons/random/fishbowlbutton.gif" alt="" height="20px" style="vertical-align: middle;"> , collages de imagenes raras que me llamen la atención <img src="images/icons/random/science_fiction_09.gif" alt="" height="20px" style="vertical-align: middle;">, y only good vibes <img src="images/icons/random/53.gif" alt="" height="20px" style="vertical-align: middle;">.
-
-        <br><img src="images/icons/random/welcome2.gif" alt="" height="100"><img src="images/icons/random/tumblr_8f90cf1ae8d9f50824af391a71787f05_0ca3c822_250.gif" alt="" height="" style="vertical-align: middle;"> <img src="images/icons/random/tumblr_m7bqmlB7ho1qzga4qo1_250.gif" alt="" height="px" style="vertical-align: middle;"> <img src="images/icons/random/planet.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/Animated-gif-cat-scan-picture-moving.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/azumangadai.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/997.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/atom444.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/133377k4xrchca4p.gif" alt="" height="100px" style="vertical-align: middle;">
+        <div style="display: block; height: 0.1cm;"></div>
+        <div><img src="images/f2024175.gif" alt="" height="50" width="auto" style="vertical-align: middle;">
+        <img src="images/f2127165.gif" alt="" height="50" width="auto" style="vertical-align: middle;">
+        <h3 style="color: rgb(241, 233, 222);margin: 10px;font-family: 'Times New Roman', Times, serif;font-size:30px; text-decoration: underline; display: inline-block;">Tiny media collection:</h3>
+        <img src="images/f2127165.gif" alt="" height="50" width="auto" style="vertical-align: middle;">
+        <img src="images/f2024175.gif" alt="" height="50" width="auto" style="vertical-align: middle;"></h3></div>
+        <div style="display: block; height: 0.5cm;"></div>
+        <div class="grid">
+          <img src="images/icons/random/welcome2.gif" alt="">
+          <img src="images/icons/random/planet.gif" alt="">
+          <img src="images/icons/random/tumblr_8f90cf1ae8d9f50824af391a71787f05_0ca3c822_250.gif" alt="">
+          <img src="images/icons/random/997.gif" alt="">
+          <img src="images/icons/random/Animated-gif-cat-scan-picture-moving.gif" alt="">
+          <img src="images/icons/random/azumangadai.gif" alt="">
+          <img src="images/icons/random/atom444.gif" alt="">
+          <img src="images/icons/random/tumblr_m7bqmlB7ho1qzga4qo1_250.gif" alt="">
+        </div>
+        <!-- <br><img src="images/icons/random/welcome2.gif" alt="" height="100"><img src="images/icons/random/tumblr_8f90cf1ae8d9f50824af391a71787f05_0ca3c822_250.gif" alt="" height="" style="vertical-align: middle;"> <img src="images/icons/random/tumblr_m7bqmlB7ho1qzga4qo1_250.gif" alt="" height="px" style="vertical-align: middle;"> <img src="images/icons/random/planet.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/Animated-gif-cat-scan-picture-moving.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/azumangadai.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/997.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/atom444.gif" alt="" height="100px" style="vertical-align: middle;"> <img src="images/icons/random/133377k4xrchca4p.gif" alt="" height="100px" style="vertical-align: middle;"> -->
     </p>   
     </div>
         </p>
         <br>
-        <div class="contenedor-imagenes">
+        <div style="" class="contenedor-imagenes">
         <img style="width: 165px;height: auto;" src="images/mini/cat 181.jpg" alt="Gato 8">
         <img style="width: 165px;height: auto;" src="images/mini/cat 183.jpg" alt="Gato 9">
         <img style="width: 165px;height: auto;" src="images/mini/cat 185.jpg" alt="Gato 10">
