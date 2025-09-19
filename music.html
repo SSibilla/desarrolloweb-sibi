@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>music and memories</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: url('images/bg/goes hard 188.jpg');
+    color: #333;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px; 
+    background: url("images/le-kitties.gif") repeat-x top;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: url("images/le-kitties.gif") repeat-x bottom;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Grid principal */
+  .container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+  }
+  .sidebar h2 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ddd;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: antiquewhite;
+  }
+  .sidebar ul li {
+    margin: 8px 0;
+  }
+  .sidebar ul li a {
+    color: antiquewhite;
+    text-decoration: none;
+  }
+  .sidebar ul li a:hover {
+    color: #0077cc;
+  }
+
+  /* Contenido principal */
+  .contenido {
+    padding: 20px;
+  }
+
+  /* Tabla para GIFs */
+  .lista-gifs {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .lista-gifs table {
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+
+  .lista-gifs td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .lista-gifs img {
+    width: 150px;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+
+  .lista-gifs img:hover {
+    transform: scale(1.05);
+  }
+
+  /* iframe para reproducir video */
+  #video-player {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+<header></header>
+<footer></footer>
+
+<div style="display: block; height: 1cm;"></div>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div style="background-color: rgba(0,0,0,0.5);
+            border: 15px solid transparent;
+            border-image: url('https://i.ibb.co/LYSfp26/C9487459-587-E-4-EDC-89-C1-2-B2-F0804-F5-A7.png') 35 fill round;
+            padding: 20px;">
+  <h2 style="color:#ddd;">LINKS</h2>
+  <ul style="color:antiquewhite;">
+    <li><a href="index.html">Step outside...</a></li>
+    <li><a href="home.html">Go back...</a></li>
+    <li><a href="game.html">Guessing game...</a></li>
+  </ul>
+</div>
+  </aside>
+
+  <!-- Contenido -->
+  <div class="contenido">
+    <div class="lista-gifs">
+      <table>
+        <tr>
+            <div><h1 style="display: block;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        font-style: oblique;">arrangements and memories seem to gather around you...</h1></p></div>
+          <td>
+            <a onclick="cargarVideo('qBfsAUFifOo')">
+              <img src="images/galeriaScroll/tumblr_849612f6359dfd1eba195d4eacdbba3f_02ff4073_500.gif" alt="Canción 1">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">respite from battle</p>
+            </a>
+          </td>
+          <td>
+            <a onclick="cargarVideo('nR33RBzegj4')">
+              <img src="images/galeriaScroll/goes hard 46.jpg" alt="Canción 2">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">colors hit my irirs</p>
+            </a>
+          </td>
+          <td>
+            <a onclick="cargarVideo('pZ31pyTZdh0')">
+              <img src="images/icons/random/cat 171.jpg" alt="Canción 3">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">🌻my love🌻</p>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick="cargarVideo('8YUAmVvLM-0')">
+              <img src="images/icons/random/goes hard 62.jpg" alt="Canción 4">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">blissful times</p>
+            </a>
+          </td>
+          <td>
+            <a onclick="cargarVideo('pl1k7cPWXx0')">
+              <img src="images/icons/random/37b72e9f31ec71ef5763378401127efc.jpg" alt="Canción 5">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">bittersweet situations</p>
+            </a>
+          </td>
+          <td>
+            <a onclick="cargarVideo('n3KDel4IbV4')">
+              <img src="images/galeriaScroll/4245b8ed01a46d9b9f334f4d3b22a929.jpg" alt="Canción 6">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">uneasy feelings</p>
+            </a>
+          </td>
+        </tr>
+         <tr>
+          <td>
+            <a onclick="cargarVideo('2bK4aeahcXc')">
+              <img src="images/galeriaScroll/2704ef74d2a73a8c62256e10ca50ee57.gif" alt="Canción 7">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">feeling alive</p>
+            </a>
+          </td>
+          <td>
+            <a onclick="cargarVideo('5EHxBwRCSOY')">
+              <img src="images/icons/random/goes hard 185.jpg" alt="Canción 8">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">never stressing</p>
+            </a>
+          </td>
+          <td>
+            <a onclick="cargarVideo('7-mFsGm1uvQ')">
+              <img src="images/galeriaScroll/248003a6dd7599e3a3e049a14150d77e.jpg" alt="Canción 9">
+            <p style="color: antiquewhite;font-family: 'Times New Roman', Times">life</p>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Aquí se cargará el video -->
+    <iframe id="video-player" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  function cargarVideo(id) {
+    const iframe = document.getElementById('video-player');
+    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+    iframe.style.display = 'block';
+    iframe.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>identify and discover</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: url('images/bg/goes hard 186.jpg');
+    color: #333;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px; 
+    background: url("images/le-kitties.gif") repeat-x top;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: url("images/le-kitties.gif") repeat-x bottom;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Grid principal */
+  .container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+  }
+  .sidebar h2 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ddd;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: antiquewhite;
+  }
+  .sidebar ul li {
+    margin: 8px 0;
+  }
+  .sidebar ul li a {
+    color: antiquewhite;
+    text-decoration: none;
+  }
+  .sidebar ul li a:hover {
+    color: #0077cc;
+  }
+
+  /* Juego */
+  .guess-game {
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .guess-game h2 {
+    color: antiquewhite;
+    font-family: 'Times New Roman', serif;
+  }
+
+  .guess-game p {
+    color: antiquewhite;
+    font-family: 'Times New Roman', serif;
+  }
+
+  .guess-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+
+  .guess-options img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .guess-options img:hover {
+    transform: scale(1.05);
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  #resultado {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  #next-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #0077cc;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  #next-btn:hover {
+    background: #005fa3;
+  }
+</style>
+</head>
+<body>
+<header></header>
+<footer></footer>
+
+<div style="display: block; height: 1cm;"></div>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div style="background-color: rgba(0,0,0,0.5);
+            border: 15px solid transparent;
+            border-image: url('https://i.ibb.co/LYSfp26/C9487459-587-E-4-EDC-89-C1-2-B2-F0804-F5-A7.png') 35 fill round;
+            padding: 20px;">
+  <h2 style="color:#ddd;">LINKS</h2>
+  <ul style="color:antiquewhite;">
+    <li><a href="index.html">Step outside...</a></li>
+    <li><a href="music.html">Tunes...</a></li>
+    <li><a href="home.html">Go back...</a></li>
+  </ul>
+</div>
+  </aside>
+
+  <!-- Contenido -->
+  <div class="contenido">
+    <div class="guess-game">
+      <h2>Adivinar el artista</h2>
+      <audio id="song" src="images/music/WIN sound effect no copyright - JG Green Screen.mp3" autoplay controls></audio>
+      <p>Felicidades! Llegaste al final del juego. Estos son los albumes y canciones presentes en el juego:</p>
+
+      <div class="guess-options">
+        <a href="https://www.youtube.com/watch?v=hcOhXThqh_0"><img src="images/music/covers/My_Bloody_Valentine_-_Loveless.png" alt=""></a>
+        <a href="https://www.youtube.com/watch?v=fdfXcNCQjf4"><img src="images/music/covers/Adrenaline_Deftones.jpg" alt=""></a>
+        <a href="https://www.youtube.com/watch?v=2qhLxfZJlbs"><img src="images/music/covers/Evanescence_-_Fallen.png" alt=""></a>
+        <a href="https://www.youtube.com/watch?v=Z1zPvvh3KxU"><img src="images/music/covers/macdemarco2.jpg" alt=""></a>
+      </div>
+      <p style="color: antiquewhite;"><a href="home.html">Back...</a></p>
+      <p id="resultado"></p>
+      <div id="boton"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function checkAnswer(element, correcto) {
+    // Deshabilitar todas las opciones después de elegir
+    const opciones = document.querySelectorAll('.guess-options img');
+    opciones.forEach(op => op.classList.add("disabled"));
+
+    const res = document.getElementById("resultado");
+    const botonDiv = document.getElementById("boton");
+
+    botonDiv.innerHTML = ""; // limpia cualquier botón previo
+
+    if (correcto) {
+      res.textContent = "¡Correcto! Ese es el artista.";
+      res.style.color = "lightgreen";
+      botonDiv.innerHTML = '<button id="next-btn" onclick="location.href=\'game5.html\'">Continuar</button>';
+    } else {
+      res.textContent = "Incorrecto. Intenta de nuevo.";
+      res.style.color = "red";
+      botonDiv.innerHTML = '<button id="next-btn" onclick="location.href=\'game.html\'">Reintentar</button>';
+    }
+  }
+</script>
+
+</body>
+</html>
