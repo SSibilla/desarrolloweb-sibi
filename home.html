@@ -102,7 +102,9 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr); /* 4 columnas */
       grid-template-rows: repeat(2, auto);  /* 2 filas */
-      gap: 20px;
+      gap: 20px;border-width: 7px;
+          border-style: solid;
+          border-image: url("https://file.garden/ZZ2PUl9MPilKgIvB/collection/borders/wq0kei.png") 8 fill round;
 
       justify-content: center; /* centra todo el grid */
       justify-items: center;   /* centra las imágenes dentro de su celda */
@@ -138,7 +140,11 @@
 
     <!-- Contenido principal -->
     <main class="main">
-      <div class="post" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="post" style="background-color: rgba(0, 0, 0, 0.5);border: 1.5em solid;
+      border-image-slice: 130 125 125 130;
+      border-image-outset: 0px 0px 0px 0px;
+      border-image-repeat: stretch stretch;
+      border-image-source: url(https://files.catbox.moe/16vx4u.png);">
         <div style="float: left;" class="contenedor-imagenes">
         <img style="width: 165px;height: auto;" src="images/mini/cat 169.jpg" alt="Gato 1">
         <img style="width: 165px;height: auto;" src="images/mini/cat 170.jpg" alt="Gato 2">
