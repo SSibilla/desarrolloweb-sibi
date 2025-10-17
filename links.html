@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sibi's links</title>
+  <link rel="icon" href="images/stampcat.jpg" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* 🔹 Título centrado arriba */
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .title img {
+      height: 24px;
+    }
+
+    .title h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .link-container {
+  list-style: none;
+  max-width: 320px;
+  width: 100%;
+    }
+
+    .link-container li {
+    margin: 0.75rem 0;
+    }
+
+    .link-container a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    color: #eee;
+    background-color: #222;
+    border: 8px solid transparent;
+    border-image: url('images/frame.png') 30 stretch;
+    border-radius: 4px;
+    transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .link-container a:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+    <body style="margin: 0%; background-color: rgb(255, 255, 255);background-image: url(images/bgtest.jpg);background-size: 25%;"></body>
+  <div class="title">
+    <img src="images/icons/random/science_fiction_09.gif" alt="icono"/>
+    <h1 style="color:antiquewhite;">sibi's links</h1>
+    <img src="images/cat3.gif" alt="icono 2" />
+  </div>
+
+    <ul class="link-container">
+
+    <!-- 🔹 Botón 1: imagen izquierda -->
+    <li>
+        <a href="home.html" style="font-style: italic;">
+        <img src="images/icons/random/catstretch.gif" alt="icono" width="20" style="vertical-align: middle; margin-right: 8px;">
+        main page
+        </a>
+    </li>
+
+    <!-- 🔹 Botón 2: imagen derecha -->
+    <li>
+        <a href="music.html" style="font-style: italic;">
+        music
+        <img src="images/icons/random/speaker_left.gif" alt="icono" width="22" style="vertical-align: middle; margin-left: 8px;">
+        </a>
+    </li>
+
+    <!-- 🔹 Botón 3: sin imagen -->
+    <li>
+        <a href="game.html" style="font-style: italic;">
+        <img src="images/icons/random/contro.gif" alt="icono" width="20" style="vertical-align: middle; margin-right: 8px;">
+        game
+        </a>
+    </li>
+
+    <!-- 🔹 Botón 4: imagen izquierda -->
+    <li>
+        <a href="https://github.com/SSibilla/desarrolloweb-sibi" style="font-style: italic;">
+        github
+        <img src="images/github.png" alt="icono" width="22" style="vertical-align: middle; margin-left: 8px;">
+        </a>
+    </li>
+
+    </ul>
+
+  <div class="footer">© 2025 Sibi</div>
+  <div id="music-player" style="margin-top: 30px;"></div>
+
+<script>
+    // Lista de links de YouTube
+    const musicLinks = [
+        "https://www.youtube.com/embed/8VpgVEoSSik",
+        "https://www.youtube.com/embed/FBWbfkzYr7k",
+        "https://www.youtube.com/embed/OcDiOUQBFd4",
+        "https://www.youtube.com/embed/v8f8WQ85Qb0"
+    ];
+
+    // Seleccionar uno aleatorio
+    const randomIndex = Math.floor(Math.random() * musicLinks.length);
+    const randomLink = musicLinks[randomIndex];
+
+    // Crear el iframe con autoplay habilitado
+    const iframe = document.createElement("iframe");
+    iframe.width = "300";
+    iframe.height = "169";
+    iframe.src = `${randomLink}?autoplay=1&mute=1`;  // autoplay y sonido activado
+    iframe.title = "Reproductor musical";
+    iframe.frameBorder = "0";
+    iframe.allow = "autoplay; encrypted-media";
+    iframe.allowFullscreen = false;
+    iframe.style.borderRadius = "8px";
+    iframe.style.boxShadow = "0 0 10px rgba(255,255,255,0.2)";
+
+    // Insertarlo en la página
+    document.getElementById("music-player").appendChild(iframe);
+    </script>
+</body>
+</html>
