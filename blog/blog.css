@@ -1,0 +1,163 @@
+/* TP: solo contenidos vistos en clase (maquetación básica) */
+:root{
+  --bg:#0b0b0b;
+  --bg-alpha:rgba(0,0,0,.6);
+  --text:#f3f3f3;
+  --muted:#d7d7d7;
+  --accent:#ffd166;
+  --brand:#e7e7ff;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body.bg{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:#000 url("../images/fondoblog.jpg") repeat top left;
+}
+
+/* Barras decorativas */
+.gif-bar{ position:fixed; left:0; width:100%; height:64px; z-index:5; background:url("../images/le-kitties.gif") repeat-x; }
+.gif-bar.top{ top:0; }
+.gif-bar.bottom{ bottom:0; }
+
+/* Accesibilidad */
+.skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip:focus{ left:16px; top:16px; width:auto; height:auto; padding:.5rem .75rem; background:#000; color:#fff; z-index:9999; }
+
+/* NAV: menú a la izquierda, oculto por defecto y visible al abrir */
+.nav{ position:sticky; top:0; z-index:20; padding:.75rem 1rem; background:var(--bg-alpha); }
+.nav-inner{ display:flex; align-items:center; gap:1rem; max-width:1100px; margin:0 auto; }
+.burger{ background:transparent; border:1px solid #fff3; color:#fff; padding:.4rem .6rem; border-radius:8px; cursor:pointer; }
+
+/* Caja del menú (el “recuadro de opciones”) */
+.menu{ 
+  display:none;                 /* SIEMPRE oculto por defecto */
+  list-style:none; margin:0; padding:.6rem;
+  background:var(--bg-alpha); 
+  border:1px solid #fff2; 
+  border-radius:10px;
+  backdrop-filter:none;         /* simple, visto en clase */
+  gap:.5rem;
+}
+.menu.open{ display:flex; }     /* visible al click */
+.menu a{ color:var(--muted); text-decoration:none; padding:.25rem .5rem; border-radius:8px; }
+.menu a:hover, .menu .active a{ color:var(--text); text-decoration:underline; text-underline-offset:4px; }
+
+/* En desktop ponemos los items en fila; en móvil, columna */
+@media (min-width:901px){ .menu{ flex-direction:row; } }
+@media (max-width:900px){ .menu{ position:absolute; left:1rem; top:56px; flex-direction:column; } }
+
+/* Contenedor principal */
+.blog-wrap{ min-height:100vh; display:flex; align-items:flex-start; justify-content:center; padding:32px 16px; }
+.blog-box{ width:min(1100px,94vw); background:var(--bg-alpha); box-shadow:0 14px 40px rgba(0,0,0,.6); padding:22px; border:2px solid #fff2; border-radius:16px; }
+.blog-title{ margin:0 0 12px; font-size:28px; letter-spacing:.5px; color:#ffe09a; text-align:center; }
+
+/* Posts: UNA COLUMNA */
+.posts{ display:grid; grid-template-columns:1fr; gap:20px; }
+.card{ background:#111318; border-radius:14px; overflow:hidden; border:1px solid #fff1; display:flex; flex-direction:column; transition:transform .2s ease, box-shadow .2s ease; }
+.card:hover{ transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.35); }
+.card-link{ display:flex; flex-direction:column; color:inherit; text-decoration:none; min-height:100%; }
+
+/* Cabecera visual de la card */
+.thumb{ position:relative; height:0; padding-top:50%; overflow:hidden; }
+.thumb img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.badge{ position:absolute; left:10px; top:10px; background:#000c; border:1px solid #fff3; color:#fff; padding:.2rem .5rem; border-radius:999px; font-size:12px; }
+
+.card-body{ display:grid; gap:.5rem; padding:14px; }
+.card-title{ margin:0; font-size:20px; color:var(--brand); }
+.card-excerpt{ margin:0; color:var(--muted); line-height:1.5; }
+.card-date{ color:#bbb; font-size:.9rem; }
+.read-more{ margin-top:auto; display:inline-block; color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+
+.site-footer{ text-align:center; padding:12px; color:#ddd; }
+
+@media (prefers-reduced-motion: reduce){
+  .card{ transition:none; }
+}
+
+/* ——— NAV transparente pero botón visible ——— */
+.nav{ 
+  background: transparent;           /* sin barra negra */
+  box-shadow: none;
+}
+
+/* Que solo el botón tenga “cajita” visible */
+.burger{
+  background: rgba(0,0,0,.55);
+  border: 1px solid #ffffff33;
+  border-radius: 10px;
+  padding: .45rem .65rem;
+}
+
+/* El menú sigue siendo un recuadro cuando se abre */
+.menu{
+  background: rgba(0,0,0,.65);
+  border: 1px solid #ffffff33;
+  border-radius: 10px;
+}
+
+/* En móvil, que flote sin barra detrás */
+@media (max-width:900px){
+  .menu{ position:absolute; left:1rem; top:56px; }
+}
+
+.hero{ text-align:center; margin:8px 0 18px; }
+.hero-title{ margin:0; font-size:22px; color:#e7e7ff; }
+.hero-desc{ margin:6px 0 10px; color:#d7d7d7; }
+.hero-cta{ display:inline-block; padding:.4rem .8rem; border:1px solid #fff3; border-radius:10px; text-decoration:none; color:#ffd166; }
+.hero-cta:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+/* ——— Aside "Sobre mí" en fila (img + texto) ——— */
+.author{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-pic{
+  flex: 0 0 120px;         /* ancho fijo de imagen */
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;     /* o 50% si la querés circular */
+  margin: 0;               /* quita márgenes extra del <img> */
+}
+
+.author-body{
+  flex: 1;
+}
+
+/* En pantallas muy chicas, apilar verticalmente */
+@media (max-width: 520px){
+  .author{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .author-pic{
+    width: 100%;
+    height: auto;
+  }
+}
+/* mismo color que "Volver al blog" */
+.blog-wrap .blog-box .content a,
+.blog-wrap .blog-box .content a:visited {
+  color: #ffd166;
+}
+.blog-wrap .blog-box .content a:hover,
+.blog-wrap .blog-box .content a:focus {
+  color: #ffe09a; /* un toque más claro al hover */
+}
+
+/* Link del GitHub con el mismo estilo que "Leer más" */
+.author-links a,
+.author-links a:visited{
+  color: var(--accent);                 /* mismo color */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.author-links a:hover{
+  text-decoration-thickness: 2px;       /* sutil énfasis al hover */
+}

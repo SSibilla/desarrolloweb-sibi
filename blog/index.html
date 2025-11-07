@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — sibi's writing corner</title>
+  <meta name="description" content="Notas y artículos del TP (blog) con maquetación básica vista en clase." />
+  <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
+</head>
+<body class="bg">
+  <header class="gif-bar top" aria-hidden="true"></header>
+  <footer class="gif-bar bottom" aria-hidden="true"></footer>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <nav class="nav" aria-label="Principal">
+    <div class="nav-inner">
+      <!-- Botón hamburguesa -->
+      <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
+
+      <!-- Menú como recuadro a la izquierda (reemplaza 'sibi's dream') -->
+      <ul id="menu" class="menu" role="menu">
+        <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
+        <li role="none" class="active"><a role="menuitem" aria-current="page" href="./index.html">Blog</a></li>
+        <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="contenido" class="blog-wrap">
+    <section class="blog-box">
+      <h1 class="blog-title">✍️ sibi's writing corner</h1>
+
+      <section class="hero">
+  <h2 class="hero-title">Blog Personal: TP2</h2>
+  <p class="hero-desc">Notas cortas sobre cosas que me interesan 😸</p>
+</section>
+
+      <!-- Posts en una sola columna -->
+      <section class="posts" aria-label="Listado de artículos">
+        <article class="card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post1.html">
+            <figure class="thumb">
+              <img loading="lazy" src="../images/cat 77.jpg" alt="Imagen del artículo 1" width="600" height="300" />
+              <figcaption class="badge">Musica</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">Mi tema del mes</h2>
+              <p class="card-excerpt" itemprop="description">Mi cancion del mes, + por qué goes hard <img src="../images/mini/goes hard 23.jpg" alt="icono1" width="40" height="30" ></p>
+              <time class="card-date" datetime="2025-11-07">07 Nov 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post2.html">
+            <figure class="thumb">
+              <img loading="lazy" src="../images/monster-hunter-world.jpg" alt="Imagen del artículo 2" width="600" height="300" />
+              <figcaption class="badge">Juegos</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Build MHW</h2>
+              <p class="card-excerpt">Build que uso en el Monster Hunter: World 🤓.</p>
+              <time class="card-date" datetime="2025-11-07">07 Nov 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post3.html">
+            <figure class="thumb">
+              <img loading="lazy" src="../images/galeriaScroll/12011109_de85d.gif" alt="Imagen del artículo 3" width="600" height="300" />
+              <figcaption class="badge">Juegos</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Juegos favoriots</h2>
+              <p class="card-excerpt">Mi listado de juegazos y por qué lo son.</p>
+              <time class="card-date" datetime="2025-11-07">07 Nov 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post4.html">
+            <figure class="thumb">
+              <img loading="lazy" src="../images/grunge.jpg" alt="Imagen del artículo 4" width="600" height="300" />
+              <figcaption class="badge">Musica</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Genre breakdown: Grunge</h2>
+              <p class="card-excerpt"><img src="../images/galeriaScroll/goes hard 8.jpg" alt="icono2" width="40" height="30">  Qué es, cómo se originó, canciones y/o artistas, influencias actuales.</p>
+              <time class="card-date" datetime="2025-11-07">07 Nov 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post5.html">
+            <figure class="thumb">
+              <img loading="lazy" src="../images/oop.jpg" alt="Imagen del artículo 5" width="600" height="300" />
+              <figcaption class="badge">POO</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Introducción a la Programación orientada a objetos</h2>
+              <p class="card-excerpt">Una intro y explicación del paradigma para programar con clases.</p>
+              <time class="card-date" datetime="2025-11-07">07 Nov 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
+      </section>
+
+      <br>
+
+<aside class="author">
+  <img class="author-pic" src="../images/mini/cat 174.jpg" alt="Foto de Sibi" width="120" height="120">
+  <div class="author-body">
+    <h3>Sobre mí</h3>
+    <p>Estudiante. Informática. Música y dev.</p>
+    <nav class="author-links">
+      <a href="https://github.com/SSibilla" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</aside>
+
+
+
+      <footer class="site-footer"><small>© <span id="y"></span> sibi's dream — Blog</small></footer>
+    </section>
+  </main>
+</body>
+</html>
