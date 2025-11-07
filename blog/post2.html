@@ -9,26 +9,44 @@
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
-<body class="bg">
-  <header class="gif-bar top" aria-hidden="true"></header>
-  <footer class="gif-bar bottom" aria-hidden="true"></footer>
 
-  <nav class="nav" aria-label="Principal">
-    <div class="nav-inner">
-      <!-- Botón hamburguesa -->
-      <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
-
-      <ul id="menu" class="menu" role="menu">
-        <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-        <li role="none" class="active"><a role="menuitem" aria-current="page" href="./index.html">Blog</a></li>
-        <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi">GitHub</a></li>
-      </ul>
+<!-- Footer overlay fijo -->
+<footer class="footer-overlay" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-about">
+      <img class="footer-pic" src="../images/mini/cat 174.jpg" alt="Foto de Sibi" width="64" height="64">
+      <div>
+        <strong>Sobre mí: Santiago Sibilla</strong>
+        <p class="footer-desc">Estudiante. Informática. Música y dev.</p>
+      </div>
     </div>
-  </nav>
+    <div class="footer-right">
+      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+        Suscribirme al newsletter →
+      </a>
+    </div>
+  </div>
+</footer>
 
+
+<body class="bg">
   <main class="blog-wrap">
   <article class="blog-box" itemscope itemtype="https://schema.org/BlogPosting">
     <header>
+      <!-- NAV: botón a la izquierda + menú desplegable -->
+<nav class="nav" aria-label="Principal">
+  <div class="nav-inner">
+    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
+    <ul id="menu" class="menu" role="menu">
+      <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
+      <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
+      <li role="none"><a role="menuitem" href="./posts.html">Todos los posts</a></li>
+      <li role="none"><a role="menuitem" href="./contacto.html">Contacto</a></li>
+      <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</nav>
+
       <h1 itemprop="headline">Build MHW: Great Sword que uso (daño por golpe + control)</h1>
       <p><time datetime="2025-11-01" itemprop="datePublished">01 Nov 2025</time> · <span itemprop="author">Sibi</span></p>
     </header>

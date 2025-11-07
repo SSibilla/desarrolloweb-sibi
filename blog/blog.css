@@ -14,7 +14,7 @@ body.bg{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
   color:var(--text);
-  background:#000 url("../images/fondoblog.jpg") repeat top left;
+  background:#000 url("../images/goes\ hard\ 150.jpg") repeat top left;
 }
 
 /* Barras decorativas */
@@ -161,3 +161,124 @@ body.bg{
 .author-links a:hover{
   text-decoration-thickness: 2px;       /* sutil énfasis al hover */
 }
+
+/* ===== Footer overlay fijo al pie ===== */
+:root{
+  --footer-h: 96px;             /* alto aprox del footer */
+}
+
+/* Evitar que el footer tape el contenido */
+body.bg { padding-bottom: var(--footer-h); }
+
+/* Barra fija semitransparente */
+.footer-overlay{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: var(--footer-h);
+  background: rgba(0,0,0,.72);
+  border-top: 1px solid #ffffff22;
+  z-index: 999;                 /* por encima del contenido */
+}
+
+.footer-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 16px;
+}
+
+/* Bloque "Sobre mí" a la izquierda */
+.footer-about{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer-pic{
+  width: 64px; height: 64px; object-fit: cover;
+  border-radius: 10px;
+}
+.footer-desc{ margin: 2px 0 0; color: #d7d7d7; }
+
+/* Acciones a la derecha */
+.footer-actions .news-link,
+.footer-actions .news-link:visited{
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer-actions .news-link:hover{
+  text-decoration-thickness: 2px;
+}
+
+/* Responsive: en pantallas chicas apilar */
+@media (max-width: 600px){
+  :root{ --footer-h: 132px; }   /* aumenta el alto para dos filas */
+  .footer-inner{
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* ===== Contacto ===== */
+.form-compact{ display:grid; gap:12px; }
+.field{ display:grid; gap:6px; }
+.field label{ color:#e7e7ff; font-weight:600; }
+.field input,
+.field textarea{
+  width:100%;
+  background:#0f1014;
+  color:#f3f3f3;
+  border:1px solid #ffffff22;
+  border-radius:10px;
+  padding:.6rem .75rem;
+}
+.field input::placeholder,
+.field textarea::placeholder{ color:#bfbfbf; }
+
+.actions{ margin-top:6px; }
+
+.btn-primary{
+  background:#111318;
+  color:#ffd166;
+  border:1px solid #ffffff33;
+  border-radius:10px;
+  padding:.55rem .9rem;
+  cursor:pointer;
+}
+.btn-primary:hover{ box-shadow:0 4px 16px rgba(0,0,0,.35); }
+
+/* ——— Menú alineado a un lado (como en index) ——— */
+.nav-inner{ display:flex; align-items:flex-start; gap:10px; }
+.menu{ margin-top: 6px; } /* menú justo debajo del botón */
+
+/* ——— Cards compactas para listados largos ——— */
+.posts.posts--compact{
+  display:grid;
+  grid-template-columns: 1fr;   /* 1 por fila; si querés 2 en desktop, cambiamos */
+  gap: 12px;
+}
+.card.card--xs .thumb{ padding-top: 30%; }     /* imagen menos alta (antes ~50%) */
+.card.card--xs .card-body{ padding: 10px; gap: .35rem; }
+.card.card--xs .card-title{ font-size: 18px; }
+.card.card--xs .card-excerpt{ font-size: 14px; color:#cfcfcf; }
+.card.card--xs .card-date{ font-size: .85rem; }
+
+/* ===== Home: aún más compacto que posts.html ===== */
+.posts--home{
+  display: grid;
+  grid-template-columns: 1fr;   /* 1 por fila (si querés 2 en desktop, avisá) */
+  gap: 10px;
+}
+
+/* Variante ultra-compacta */
+.card.card--xxs .thumb{ padding-top: 22%; }     /* imagen bajita (posts.html usa 30%) */
+.card.card--xxs .card-body{ padding: 8px 10px; gap: .3rem; }
+.card.card--xxs .card-title{ font-size: 16px; line-height: 1.2; }
+.card.card--xxs .card-excerpt{ font-size: 13px; color:#cdcdcd; line-height: 1.35; }
+.card.card--xxs .card-date{ font-size: .8rem; }
+.card.card--xxs .read-more{ font-size: .85rem; }

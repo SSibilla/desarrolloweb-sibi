@@ -16,4 +16,12 @@ if (burger && menu){
     }
   };
 }
-    
+
+// Formulario de contacto: no guardar todavía
+var form = document.querySelector('#contacto');
+if (form){
+  form.onsubmit = function(ev){
+    ev.preventDefault(); // por ahora no envía
+    alert('¡Gracias! Pronto habilitaré el envío real.'); // feedback simple
+  };
+}

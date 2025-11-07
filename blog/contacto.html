@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Blog</title>
+  <meta name="description" content="Página de contacto del blog." />
+  <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
+</head>
+<body class="bg">
+  <!-- (no gif-bars) -->
+
+  <!-- Menú dentro de la caja, como en index -->
+  <main class="blog-wrap">
+    <section class="blog-box">
+      <nav class="nav" aria-label="Principal">
+        <div class="nav-inner">
+          <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
+          <ul id="menu" class="menu" role="menu">
+            <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
+            <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
+            <li role="none"><a role="menuitem" href="https://github.com/SSibilla" target="_blank" rel="noopener">GitHub</a></li>
+            <li role="none" class="active"><a role="menuitem" aria-current="page" href="./contacto.html">Contacto</a></li>
+            <li><a href="./posts.html">Todos los posts</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <h1 class="blog-title">Contacto</h1>
+
+      <article class="card" style="max-width: 860px; margin: 0 auto;">
+        <div class="card-body">
+          <p>Completá el formulario y pronto habilitaré el envío de mensajes. Por ahora el botón no realiza ninguna acción.</p>
+
+          <form id="contacto" class="form-compact" novalidate>
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" inputmode="email" placeholder="tucorreo@ejemplo.com" required />
+            </div>
+
+            <div class="field">
+              <label for="pregunta">Pregunta / Mensaje</label>
+              <textarea id="pregunta" name="pregunta" rows="6" placeholder="Escribí tu pregunta…" required></textarea>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn-primary">Enviar</button>
+              <a class="read-more" href="index.html" style="margin-left:12px;">← Volver al blog</a>
+            </div>
+          </form>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer overlay fijo que ya tenés -->
+  <!-- (no lo repito aquí; se mantiene igual que en tu index) -->
+</body>
+</html>
