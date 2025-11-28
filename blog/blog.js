@@ -22,6 +22,25 @@ var form = document.querySelector('#contacto');
 if (form){
   form.onsubmit = function(ev){
     ev.preventDefault(); // por ahora no envía
-    alert('¡Gracias! Pronto habilitaré el envío real.'); // feedback simple
+    alert('¡Gracias por enviar tu consulta!'); // feedback simple
   };
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const footer = document.querySelector(".footer-overlay");
+  const btn = document.getElementById("footer-toggle");
+
+  let abierto = true;
+
+  btn.addEventListener("click", () => {
+    abierto = !abierto;
+
+    if (abierto) {
+      footer.classList.remove("hidden");
+      btn.textContent = "▲"; // arriba
+    } else {
+      footer.classList.add("hidden");
+      btn.textContent = "▼"; // abajo
+    }
+  });
+});

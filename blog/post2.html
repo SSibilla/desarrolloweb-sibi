@@ -6,9 +6,18 @@
   <title>Post 2</title>
   <meta name="description" content="Juegos" />
   <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
+
+<button id="footer-toggle" class="footer-toggle-btn">
+  ▲
+</button>
 
 <!-- Footer overlay fijo -->
 <footer class="footer-overlay" role="contentinfo">
@@ -21,12 +30,14 @@
       </div>
     </div>
     <div class="footer-right">
-      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+      <a class="news-link" href="./contacto.html" target="_blank" rel="noopener">
         Suscribirme al newsletter →
       </a>
     </div>
   </div>
 </footer>
+
+<script src="footer-toggle.js"></script>
 
 
 <body class="bg">
@@ -36,14 +47,14 @@
       <!-- NAV: botón a la izquierda + menú desplegable -->
 <nav class="nav" aria-label="Principal">
   <div class="nav-inner">
-    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
-    <ul id="menu" class="menu" role="menu">
-      <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-      <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
-      <li role="none"><a role="menuitem" href="./posts.html">Todos los posts</a></li>
-      <li role="none"><a role="menuitem" href="./contacto.html">Contacto</a></li>
-      <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
+            <!-- menu -->
+       <ul>
+          <li><a href="../links.html">Links</a></li>
+          <li><a href="./index.html">Blog</a></li>
+          <li><a href="./about.html">Sobre blog</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Posts</a></li>
+        </ul>
   </div>
 </nav>
 
@@ -51,39 +62,69 @@
       <p><time datetime="2025-11-01" itemprop="datePublished">01 Nov 2025</time> · <span itemprop="author">Sibi</span></p>
     </header>
     <section class="content" itemprop="articleBody" style="text-align:left; max-width:860px; margin:16px auto;">
-      <p><strong>Filosofía:</strong> menos golpes, más fuertes. Cargar, tacleo para hiperarmadura y <em>True Charged Slash</em> en puntos débiles.</p>
+      <p><strong>Filosofía:</strong> menos golpes, más fuertes. La Gran Espada vive de castigar con precisión: cargar, usar el tacleo para hiperarmadura y meter un True Charged Slash en puntos débiles. Se trata más de “controlar el ritmo del monstruo” que de spamear movimientos.</p>
 
-      <h2>Habilidades núcleo (prioridad)</h2>
-      <ol>
-        <li><strong>Weakness Exploit 3</strong> → críticos en partes blandas.</li>
-        <li><strong>Critical Boost 3</strong> → potencia el crítico.</li>
-        <li><strong>Focus 3</strong> → carga más rápida.</li>
-        <li>Según arma: <strong>Critical Eye/Maximum Might</strong>, luego <strong>Handicraft</strong> o <strong>Protective Polish</strong>.</li>
-        <li>Situacionales: <strong>Agitator</strong>, <strong>Partbreaker</strong>, <strong>Health Boost 3</strong>.</li>
-        <li>Iceborne: <strong>Frostcraft</strong> (Velkhana) o <strong>Crit Draw + Punishing Draw</strong>.</li>
-      </ol>
+<h2>Habilidades núcleo (prioridad)</h2>
+<ul>
+  <li><strong>Weakness Exploit 3:</strong> críticos garantizados en partes blandas. Es la habilidad más eficiente del arma: convierte cada ventana de daño en un castigo serio.</li>
 
-      <h2>Equipo ejemplo</h2>
-      <ul>
-        <li><strong>Arma:</strong> GS con buen filo blanco/púrpura y ranuras.</li>
-        <li><strong>Armadura:</strong> mezcla para WEX/Focus; en Iceborne, set Velkhana (Frostcraft) o mixto Crit Draw.</li>
-        <li><strong>Mantles:</strong> Temporal + Rocksteady (o Evasion).</li>
-      </ul>
+  <li><strong>Critical Boost 3:</strong> aumenta el daño del crítico. Combinado con WEX hace que cada golpe cargado sea brutal.</li>
 
-      <h2>Gameplay loop</h2>
-      <ol>
-        <li>Colocación diagonal a cabeza/cola.</li>
-        <li>Carga 1–2 y <strong>tacleo</strong> si te presionan.</li>
-        <li><strong>True Charged Slash</strong> en derribos, trampas o animaciones largas.</li>
-        <li>Guardar, recolocar, repetir; cuidar filo / bonus de Frostcraft.</li>
-      </ol>
+  <li><strong>Focus 3:</strong> carga más rápida de los slashes. Reduce el tiempo muerto y abre más oportunidades para TCS sin arriesgar tanto.</li>
 
-      <h2>Ajustes por monstruo</h2>
-      <ul>
-        <li><strong>Rápidos:</strong> más Crit Draw, menos cargas largas.</li>
-        <li><strong>Pesados:</strong> Partbreaker y ventanas largas de castigo.</li>
-        <li><strong>Voladores:</strong> Flash Pods para bajarlos.</li>
-      </ul>
+  <li><strong>Según arma:</strong> Critical Eye / Maximum Might si tu set lo permite; Handicraft o Protective Polish para mantener filo blanco/púrpura. El filo alto es clave para no rebotar y para maximizar daño.</li>
+
+  <li><strong>Situacionales:</strong> Agitator (si el monstruo se enfurece rápido), Partbreaker (para romper cuernos/colas más fácil), Health Boost 3 (supervivencia general).</li>
+
+  <li><strong>Iceborne:</strong> Frostcraft (set Velkhana) para daño masivo en la primera carga; o Crit Draw + Punishing Draw para un estilo ultra seguro basado en esquivar y pegar desde funda.</li>
+</ul>
+
+<h2>Equipo ejemplo</h2>
+<ul>
+  <li><strong>Arma:</strong> Gran Espada con filo blanco/púrpura estable y ranuras decentes. Dragonbone, Wyvern Ignition o armas de monstruos élite funcionan excelente según afinidad/elemento.</li>
+
+  <li><strong>Armadura:</strong> mezcla clásica para WEX + Focus; en Iceborne, set Velkhana completo para Frostcraft o mix con piezas de Banbaro/Nargacuga para Crit Draw defensivo.</li>
+
+  <li><strong>Mantles:</strong> Temporal + Rocksteady (comodísimos para castigar sin interrupciones). Alternativa más segura: Evasion Mantle para esquivas con frames extendidos.</li>
+</ul>
+
+<h2>Gameplay loop</h2>
+<ul>
+  <li><strong>Colocación diagonal:</strong> posicionate en 45° hacia la cabeza o la cola para que el TCS conecte ambas fases del golpe. Es un truco simple que maximiza daño.</li>
+
+  <li><strong>Carga 1–2 + tacleo:</strong> si el monstruo te presiona, tacleá en vez de rodar. Gana hiperarmadura y mantiene la carga activa, lo cual te da control sin perder DPS.</li>
+
+  <li><strong>True Charged Slash:</strong> usalo en derribos, trampas, KOs o animaciones largas del monstruo. Si no estás seguro, cortá la carga: mejor perder un golpe que quedar regalado.</li>
+
+  <li><strong>Guardar + recolocar:</strong> lo que define a un buen GS player es moverse, no pegar siempre. Guardás, caminás un poco, buscás ángulo, cargás y castigás.</li>
+
+  <li><strong>Cuidar filo / Frostcraft:</strong> mantener filo púrpura o el bonus cargado hace que los golpes pesen muchísimo. Aprendé cuándo afilar sin comprometer ventanas de daño.</li>
+</ul>
+
+<h2>Ajustes por monstruo</h2>
+<ul>
+  <li><strong>Rápidos:</strong> más Crit Draw, menos cargas largas. Jugar “hit & run” desde funda funciona mejor contra bichos hiperactivos como Odogaron o Barioth.</li>
+
+  <li><strong>Pesados:</strong> Partbreaker y oportunidades largas para TCS. Uragaan, Radobaan o monstruos lentos permiten castigos enormes si conocés sus animaciones.</li>
+
+  <li><strong>Voladores:</strong> Flash Pods para bajarlos y luego castigo directo. El GS sufre contra monstruos aéreos, así que controlar sus vuelos es clave.</li>
+
+  <li><strong>Monstruos con armadura dura:</strong> Handicraft o Protective Polish son obligatorios para evitar rebotes y mantener filo óptimo.</li>
+
+  <li><strong>Monstruos muy agresivos:</strong> tacleo > rodar. Aprovechar hiperarmadura es lo que diferencia a un jugador promedio de uno que domina la GS.</li>
+</ul>
+
+<h2>Notas adicionales / Fun facts</h2>
+<ul>
+  <li>El True Charged Slash tiene una de las animaciones más largas del juego, pero también uno de los multiplicadores más fuertes: cuando entra bien, redefine una cacería.</li>
+
+  <li>En Iceborne, Frostcraft convierte los primeros segundos desde funda en una ventana de daño absurda, especialmente si encadenás Crit Draw + TCS.</li>
+
+  <li>El tacleo de Gran Espada fue tan popular en MHW que muchos jugadores empezaron a tratarla como “arma de counter”, algo que no había pasado en generaciones anteriores.</li>
+
+  <li>Muchos pros recomiendan practicar frente a el Great Jagras o el Pukei-Pukei para aprender tiempos de carga sin estrés.</li>
+</ul>
+
 
       <h2>Referencias</h2>
       <p>
@@ -94,9 +135,16 @@
 
       <p><em>Pregunta para reader:</em> ¿Sos team Frostcraft o Crit Draw? ¿Qué set te funcionó mejor?</p>
 
-      <figure class="thumb" style="max-width:860px; margin:12px auto;">
-        <img loading="lazy" src="../images/greatsword.jpg" alt="Great Sword build en MHW" width="1200" height="600" />
-      </figure>
+      <div style="text-align: center;">
+      <div class="dropdown">
+        <div class="imagehover"><p >Hazme hover para ver la imagen!!</p></div>
+        <div class="dropdown-content">
+          <img src="../images/greatsword.jpg" alt="greatsword">
+          
+        </div>
+        </div>
+      </div>
+
       <p><a class="read-more" href="index.html">← Volver al blog</a></p>
     </section>
   </article>

@@ -6,9 +6,18 @@
   <title>Post 1</title>
   <meta name="description" content="Musica" />
   <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
+
+<button id="footer-toggle" class="footer-toggle-btn">
+  ▲
+</button>
 
 <!-- Footer overlay fijo -->
 <footer class="footer-overlay" role="contentinfo">
@@ -21,12 +30,15 @@
       </div>
     </div>
     <div class="footer-right">
-      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+      <a class="news-link" href="./contacto.html" target="_blank" rel="noopener">
         Suscribirme al newsletter →
       </a>
     </div>
   </div>
 </footer>
+
+<script src="footer-toggle.js"></script>
+
 
 <body class="bg">
 
@@ -36,14 +48,14 @@
       <!-- NAV: botón a la izquierda + menú desplegable -->
 <nav class="nav" aria-label="Principal">
   <div class="nav-inner">
-    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
-    <ul id="menu" class="menu" role="menu">
-      <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-      <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
-      <li role="none"><a role="menuitem" href="./posts.html">Todos los posts</a></li>
-      <li role="none"><a role="menuitem" href="./contacto.html">Contacto</a></li>
-      <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
+            <!-- menu -->
+       <ul>
+          <li><a href="../links.html">Links</a></li>
+          <li><a href="./index.html">Blog</a></li>
+          <li><a href="./about.html">Sobre blog</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Posts</a></li>
+        </ul>
   </div>
 </nav>
 
@@ -51,25 +63,41 @@
       <p><time datetime="2025-10-28" itemprop="datePublished">28 Oct 2025</time> · <span itemprop="author">Sibi</span></p>
     </header>
     <section class="content" itemprop="articleBody" style="text-align:left; max-width:860px; margin:16px auto;">
-      <p><strong>Por qué me gustó:</strong> minimalista y devastador. Voz + órgano, silencios bien usados y un juego de palabras (“solo” / “so low”) que condensa soledad, caída y pequeños alivios.</p>
+      <p><strong>Por qué me gustó:</strong> minimalista y devastador. Voz + órgano, silencios bien usados y un juego de palabras (“solo” / “so low”) que condensa soledad, caída y pequeños alivios. Lo que más me atrajo es cómo Frank convierte algo simple en algo emocionalmente enorme sin subir el volumen ni dramatizar: solo deja que la palabra pese.</p>
 
-      <h2>Lectura del cuerpo</h2>
-      <ul>
-        <li><strong>Doble sentido:</strong> estar solo y sentirse por el piso a la vez.</li>
-        <li><strong>Cielo/infierno:</strong> “in hell there’s heaven” → hallar respiros en medio del caos.</li>
-        <li><strong>Rituales urbanos:</strong> techos, humo, madrugadas; la ciudad como personaje.</li>
-        <li><strong>Fe cotidiana:</strong> espiritualidad sin sermón, anclada a gestos simples.</li>
-      </ul>
+<h2>Lectura del cuerpo</h2>
+<ul>
+  <li><strong>Doble sentido:</strong> “solo” y “so low” se superponen en una misma emoción: aislamiento y estar por el piso. Es un juego fonético que hace que la letra se lea en dos niveles a la vez.</li>
 
-      <h2>Producción</h2>
-      <ul>
-        <li><strong>Arreglo desnudo:</strong> órgano cálido, voz al frente, sin percusión.</li>
-        <li><strong>Dinámica respirada:</strong> pausas y reverbs cortas para dejar flotar frases.</li>
-        <li><strong>Fraseo íntimo:</strong> medio susurro, prioridad a la palabra.</li>
-      </ul>
+  <li><strong>Cielo/infierno:</strong> “in hell there’s heaven” → pequeños instantes de paz dentro del caos mental. No es esperanza, es supervivencia emocional: mini fugas de luz en un contexto oscuro.</li>
 
-      <h2>Contexto y conexiones</h2>
-      <p>Dentro de <em>Blonde</em>, “Solo” dialoga con <em>“Solo (Reprise)”</em> (verso de André 3000) y con el tono confesional del disco.</p>
+  <li><strong>Rituales urbanos:</strong> techos, humo, calles vacías, luces de madrugada. La ciudad aparece como un personaje más, acompañando el estado mental del narrador con un paisaje que vibra como él.</li>
+
+  <li><strong>Fe cotidiana:</strong> espiritualidad sin predicar: mirar el cielo, respirar hondo, encontrarse con microgestos que sostienen. Frank usa lo mínimo para hablar de fe sin mencionarla directamente.</li>
+
+  <li><strong>Notas adicionales:</strong> la letra mezcla confesión, memoria y poesía urbana, creando la sensación de que estás leyendo pensamientos que pasaron sin filtro.</li>
+</ul>
+
+<h2>Producción</h2>
+<ul>
+  <li><strong>Arreglo desnudo:</strong> órgano cálido, voz hiperfrontal, cero percusión. El espacio vacío es parte de la emoción: lo que no suena también dice algo.</li>
+
+  <li><strong>Dinámica respirada:</strong> silencios breves, reverbs sutiles y una mezcla que deja que cada frase flote. Parece grabado en una habitación pequeña, pero se siente gigantesco por dentro.</li>
+
+  <li><strong>Fraseo íntimo:</strong> medio susurro, acentos suaves, ritmo conversacional. Frank canta como si hablara consigo mismo, lo que vuelve el tema más cercano.</li>
+
+  <li><strong>Detalle sonoro:</strong> el órgano tiene un timbre similar a teclados vintage de iglesia, reforzando el tono espiritual del tema sin que sea explícito.</li>
+</ul>
+
+<h2>Contexto y conexiones</h2>
+<p>Dentro de <em>Blonde</em>, “Solo” dialoga directamente con <em>“Solo (Reprise)”</em>, donde André 3000 explota en un verso frenético que refleja la otra cara de la soledad: ansiedad, velocidad, ruido. El track establece el tono confesional del disco: identidades fragmentadas, silencios que pesan, amor que no termina de nombrarse.</p>
+
+<p><strong>Fun facts:</strong></p>
+<ul>
+  <li>Frank compuso partes del disco usando teclados económicos de los 90, cuyos órganos aportan el tono cálido característico del track.</li>
+  <li>“Solo” es uno de los temas más citados por fans cuando hablan de “catarsis silenciosa”: canciones que te destruyen sin gritar.</li>
+  <li>La estructura del disco coloca esta canción como un punto de calma antes de que el álbum se vuelva más introspectivo.</li>
+</ul>
 
       <h2>Referencias</h2>
       <p>
@@ -79,10 +107,21 @@
       </p>
 
       <p><em>Pregunta para reader:</em> ¿Qué verso te golpeó más y por qué?</p>
-
+      
+      <div style="text-align: center;">
+      <div class="dropdown">
+        <div class="imagehover"><p >Hazme hover para ver la imagen!!</p></div>
+        <div class="dropdown-content">
+          <img src="../images/blond.jpg" alt="blonded" width="300" height="300">
+          
+        </div>
+        </div>
+      </div>
+<!-- 
       <figure class="thumb" style="max-width:860px; margin:12px auto;">
         <img loading="lazy" src="../images/blonde.jpeg" alt="Frank Ocean - Solo" width="1200" height="600"/>
-      </figure>
+      </figure>-->
+
       <p><a class="read-more" href="index.html">← Volver al blog</a></p>
     </section>
   </article>

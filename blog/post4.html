@@ -6,9 +6,18 @@
   <title>Post 4</title>
   <meta name="description" content="Musica" />
   <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
+
+<button id="footer-toggle" class="footer-toggle-btn">
+  ▲
+</button>
 
 <!-- Footer overlay fijo -->
 <footer class="footer-overlay" role="contentinfo">
@@ -21,12 +30,15 @@
       </div>
     </div>
     <div class="footer-right">
-      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+      <a class="news-link" href="./contacto.html" target="_blank" rel="noopener">
         Suscribirme al newsletter →
       </a>
     </div>
   </div>
 </footer>
+
+<script src="footer-toggle.js"></script>
+
 
 <body class="bg">
 <main class="blog-wrap">
@@ -35,14 +47,14 @@
       <!-- NAV: botón a la izquierda + menú desplegable -->
 <nav class="nav" aria-label="Principal">
   <div class="nav-inner">
-    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
-    <ul id="menu" class="menu" role="menu">
-      <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-      <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
-      <li role="none"><a role="menuitem" href="./posts.html">Todos los posts</a></li>
-      <li role="none"><a role="menuitem" href="./contacto.html">Contacto</a></li>
-      <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
+            <!-- menu -->
+       <ul>
+          <li><a href="../links.html">Links</a></li>
+          <li><a href="./index.html">Blog</a></li>
+          <li><a href="./about.html">Sobre blog</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Posts</a></li>
+        </ul>
   </div>
 </nav>
 
@@ -50,28 +62,33 @@
       <p><time datetime="2025-11-04" itemprop="datePublished">04 Nov 2025</time> · <span itemprop="author">Sibi</span></p>
     </header>
     <section class="content" itemprop="articleBody" style="text-align:left; max-width:860px; margin:16px auto;">
-      <p><strong>Definición rápida:</strong> rock alternativo de Seattle (mediados de los 80) que mezcla actitud punk + peso metal. Sonido crudo, letras introspectivas y estética anti-heroica.</p>
+     <p><strong>Definición rápida:</strong> rock alternativo de Seattle (mediados de los 80) que mezcla actitud punk + peso metal. Sonido crudo, letras introspectivas y estética anti-heroica. Su identidad nace de una combinación rara: energía DIY, distorsión agresiva y una sensibilidad emocional que en ese momento no era común en el rock mainstream.</p>
 
-      <h2>Rasgos musicales</h2>
-      <ul>
-        <li>Guitarras saturadas con dinámica <em>quiet/loud</em>.</li>
-        <li>Baterías sencillas pero pesadas.</li>
-        <li>Letras sobre alienación, vulnerabilidad y desencanto.</li>
-      </ul>
+<h2>Rasgos musicales</h2>
+<ul>
+  <li>Guitarras saturadas con dinámica <em>quiet/loud</em>: versos tranquilos que explotan en estribillos. Esta fórmula influenció a miles de bandas posteriores.</li>
+  <li>Baterías sencillas pero pesadas: golpes directos, sin adornos, priorizando el impacto sobre la complejidad técnica.</li>
+  <li>Letras sobre alienación, vulnerabilidad y desencanto: introspección brutal que contrasta con la crudeza del sonido.</li>
+  <li>Voces rasgadas o melódicas con un tono confesional: desde gritos catárticos hasta murmullos casi íntimos.</li>
+</ul>
 
-      <h2>Origen y escena</h2>
-      <p>Sellos locales (como Sub Pop) y bandas que consolidan el “Seattle sound”. La explosión 1991–94 lo vuelve fenómeno global.</p>
+<h2>Origen y escena</h2>
+<p>Sellos locales (como Sub Pop) y bandas que consolidan el “Seattle sound”. La explosión 1991–94 lo vuelve fenómeno global. La escena nace por cercanía humana antes que por estética: músicos compartiendo salas de ensayo, locales pequeños, equipos prestados y un clima cultural gris, lluvioso y aislado que moldeó el carácter del género.</p>
+<p>Su éxito masivo fue accidental: la industria no entendía del todo el sonido, pero la autenticidad conectó con jóvenes que no se identificaban con el glam metal ni con el pop pulido de la época.</p>
 
-      <h2>Para empezar a escuchar</h2>
-      <ul>
-        <li>Nirvana — “Smells Like Teen Spirit”</li>
-        <li>Pearl Jam — “Alive”</li>
-        <li>Soundgarden — “Black Hole Sun”</li>
-        <li>Alice in Chains — “Man in the Box”</li>
-      </ul>
+<h2>Para empezar a escuchar</h2>
+<ul>
+  <li>Nirvana — “Smells Like Teen Spirit”: himno fundacional que mezcla caos, melodía y apatía generacional.</li>
+  <li>Pearl Jam — “Alive”: riff clásico, emoción contenida y una interpretación vocal icónica de Eddie Vedder.</li>
+  <li>Soundgarden — “Black Hole Sun”: psicodelia oscura + técnicas vocales impresionantes de Chris Cornell.</li>
+  <li>Alice in Chains — “Man in the Box”: afinaciones bajas, armonías vocales inquietantes y grooves pesados.</li>
+  <li>Mudhoney — “Touch Me I’m Sick”: espíritu garage, sarcasmo y actitud pura del movimiento temprano.</li>
+</ul>
 
-      <h2>Hoy</h2>
-      <p>Deja huella en el post-grunge y en mucho alt-rock actual (dinámicas, timbres, letras personales). No desapareció: se transformó.</p>
+<h2>Hoy</h2>
+<p>Deja huella en el post-grunge y en mucho alt-rock actual (dinámicas, timbres, letras personales). No desapareció: se transformó. Muchas bandas modernas retoman sus elementos—afinaciones graves, distorsión arenosa, producción menos pulida, emotividad áspera—como forma de escapar del pop hiperproducido.</p>
+<p>Su influencia también aparece en movimientos como shoegaze revival, emo de tercera ola, metal alternativo y escenas indie que recuperan la estética de vulnerabilidad y ruido controlado.</p>
+
 
       <p><strong>Referencias:</strong>
         <a href="https://es.wikipedia.org/wiki/Grunge" target="_blank" rel="noopener">Grunge</a> ·
@@ -81,9 +98,17 @@
 
       <p><em>Pregunta para reader:</em> ¿Qué banda te define el sonido grunge y por qué?</p>
 
-      <figure class="thumb" style="max-width:860px; margin:12px auto;">
-        <img loading="lazy" src="../images/grunge2.jpg" alt="Estética grunge, guitarras y franela" width="1200" height="600" />
-      </figure>
+      <div style="text-align: center;">
+      <div class="dropdown">
+        <div class="imagehover"><p >Hazme hover para ver la imagen!!</p></div>
+        <div class="dropdown-content">
+          <img src="../images/grunge2.jpg" alt="grunge" width="1200" height="600">
+          
+        </div>
+        </div>
+      </div>
+      
+
       <p><a class="read-more" href="index.html">← Volver al blog</a></p>
     </section>
   </article>

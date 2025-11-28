@@ -6,9 +6,19 @@
   <title>Post 5</title>
   <meta name="description" content="POO" />
   <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
+
+<button id="footer-toggle" class="footer-toggle-btn">
+  ▲
+</button>
+
 <!-- Footer overlay fijo -->
 <footer class="footer-overlay" role="contentinfo">
   <div class="footer-inner">
@@ -20,12 +30,15 @@
       </div>
     </div>
     <div class="footer-right">
-      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+      <a class="news-link" href="./contacto.html" target="_blank" rel="noopener">
         Suscribirme al newsletter →
       </a>
     </div>
   </div>
 </footer>
+
+<script src="footer-toggle.js"></script>
+
 
 <body class="bg">
 <main class="blog-wrap">
@@ -34,14 +47,14 @@
       <!-- NAV: botón a la izquierda + menú desplegable -->
 <nav class="nav" aria-label="Principal">
   <div class="nav-inner">
-    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
-    <ul id="menu" class="menu" role="menu">
-      <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-      <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
-      <li role="none"><a role="menuitem" href="./posts.html">Todos los posts</a></li>
-      <li role="none"><a role="menuitem" href="./contacto.html">Contacto</a></li>
-      <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
+            <!-- menu -->
+       <ul>
+          <li><a href="../links.html">Links</a></li>
+          <li><a href="./index.html">Blog</a></li>
+          <li><a href="./about.html">Sobre blog</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Posts</a></li>
+        </ul>
   </div>
 </nav>
 
@@ -49,37 +62,45 @@
       <p><time datetime="2025-11-07" itemprop="datePublished">07 Nov 2025</time> · <span itemprop="author">Sibi</span></p>
     </header>
     <section class="content" itemprop="articleBody" style="text-align:left; max-width:860px; margin:16px auto;">
-      <p><strong>Idea central:</strong> modelar con <em>clases</em> (plantillas) y <em>objetos</em> (instancias) que tienen identidad, estado (atributos) y comportamiento (métodos).</p>
+      <p><strong>Idea central:</strong> modelar con <em>clases</em> (plantillas) y <em>objetos</em> (instancias) que tienen identidad, estado (atributos) y comportamiento (métodos). La POO busca representar problemas del mundo real de forma ordenada, flexible y más natural que la simple secuencia de funciones.</p>
 
-      <h2>Principios clave</h2>
-      <ul>
-        <li><strong>Encapsulación:</strong> ocultar detalles y exponer una interfaz clara.</li>
-        <li><strong>Abstracción:</strong> enfocarse en lo esencial.</li>
-        <li><strong>Herencia:</strong> especializar comportamientos.</li>
-        <li><strong>Polimorfismo:</strong> misma interfaz, implementaciones distintas.</li>
-        <li><strong>Composición &gt; Herencia:</strong> armar objetos por partes.</li>
-      </ul>
+<h2>Principios clave</h2>
+<ul>
+  <li><strong>Encapsulación:</strong> ocultar detalles y exponer una interfaz clara. Permite modificar la implementación sin romper el resto del sistema.</li>
+  <li><strong>Abstracción:</strong> enfocarse en lo esencial: no mostrar cómo se hace algo, solo qué hace. Reduce ruido y simplifica modelos complejos.</li>
+  <li><strong>Herencia:</strong> especializar comportamientos. Útil para compartir lógica común, pero debe usarse con criterio.</li>
+  <li><strong>Polimorfismo:</strong> misma interfaz, implementaciones distintas. Permite intercambiar objetos según su rol, no según su tipo exacto.</li>
+  <li><strong>Composición &gt; Herencia:</strong> armar objetos por partes (agregar componentes). Favorece flexibilidad y evita árboles de herencia gigante.</li>
+  <li><strong>Responsabilidad única:</strong> cada clase debe hacer solo una cosa, y hacerla bien. Mantiene el diseño limpio y testeable.</li>
+</ul>
 
-      <h2>Mini-ejemplo (juegos)</h2>
-      <pre><code>// Clases: Jugador, Enemigo, Proyectil, Muro
-// Estado: vida, posición, daño, velocidad
-// Métodos: mover(), atacar(), colisiona(obj)
-// Polimorfismo: dañar(obj) funciona con Muro o Enemigo
+<h2>Mini-ejemplo (juegos)</h2>
+<pre><code>// Clases: Jugador, Enemigo, Proyectil, Muro.
+// Estado: vida, posición, daño, velocidad.
+// Métodos: mover(), atacar(), colisiona(obj).
+// Polimorfismo: dañar(obj) funciona con Muro o Enemigo.
+// Composición: un Enemigo puede tener un Comportamiento (IA) intercambiable.
+// Encapsulación: posición solo se modifica mediante mover(), no directamente.
+// Abstracción: atacar() no expone cómo calcula el daño, solo que lo aplica.
 </code></pre>
 
-      <h2>Ventajas prácticas</h2>
-      <ul>
-        <li>Mantenibilidad y reutilización.</li>
-        <li>Menos acoplamiento si hay buenas interfaces.</li>
-        <li>Tests más claros por responsabilidades pequeñas.</li>
-      </ul>
+<h2>Ventajas prácticas</h2>
+<ul>
+  <li>Mantenibilidad y reutilización: clases bien diseñadas se reaprovechan en nuevos módulos o juegos.</li>
+  <li>Menos acoplamiento si hay buenas interfaces: se pueden reemplazar partes del código sin tocar el resto.</li>
+  <li>Tests más claros por responsabilidades pequeñas: cada clase se puede probar en aislamiento.</li>
+  <li>Modelos más expresivos: es más fácil leer código que refleja entidades reales (Jugador, Enemigo, Arma...).</li>
+</ul>
 
-      <h2>Errores comunes</h2>
-      <ul>
-        <li><strong>Clase Dios:</strong> hace todo → dividir en responsabilidades.</li>
-        <li><strong>Herencia excesiva:</strong> preferir composición.</li>
-        <li><strong>Atributos públicos sin control:</strong> encapsular.</li>
-      </ul>
+<h2>Errores comunes</h2>
+<ul>
+  <li><strong>Clase Dios:</strong> hace todo → dividir en responsabilidades pequeñas y delegar tareas.</li>
+  <li><strong>Herencia excesiva:</strong> preferir composición; evita jerarquías rígidas y difíciles de mantener.</li>
+  <li><strong>Atributos públicos sin control:</strong> encapsular con getters/setters para proteger estado interno.</li>
+  <li><strong>Mezclar lógica de vista con lógica de modelo:</strong> separar responsabilidades (MVC u otro patrón).</li>
+  <li><strong>Crear clases por crear:</strong> no todo necesita una clase; solo cuando aporta claridad o estructura.</li>
+</ul>
+
 
       <h2>Referencias</h2>
       <p>
@@ -91,9 +112,16 @@
       <p><em>Sugerencia para reader:</em> modelá <code>Cancion</code> y <code>Playlist</code> (agregar, siguiente, anterior) usando composición.</p>
       <p><em>Pregunta para reader:</em> ¿Qué ejemplo real querés modelar en objetos para practicar?</p>
 
-      <figure class="thumb" style="max-width:860px; margin:12px auto;">
-        <img loading="lazy" src="../images/POO.png" alt="Diagrama simple de clases" width="1200" height="600" />
-      </figure>
+  <div style="text-align: center;">
+  <div class="dropdown">
+        <div class="imagehover"><p >Hazme hover para ver la imagen!!</p></div>
+        <div class="dropdown-content">
+          <img src="../images/POO.png" alt="Diagrama simple de clases" width="1200" height="600">
+          
+        </div>
+        </div>
+      </div>
+
       <p><a class="read-more" href="index.html">← Volver al blog</a></p>
     </section>
   </article>

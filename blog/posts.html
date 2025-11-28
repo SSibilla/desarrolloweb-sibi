@@ -6,27 +6,41 @@
   <title>Todos los posts — Blog</title>
   <meta name="description" content="Listado compacto de todos los posts del blog." />
   <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
+
+<button id="footer-toggle" class="footer-toggle-btn">
+  ▲
+</button>
 
 <!-- Footer overlay fijo -->
 <footer class="footer-overlay" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-about">
-      <img class="footer-pic" src="../images/mini/cat 174.jpg" alt="Foto de Sibi" width="64" height="64">
+      <picture>
+        <source srcset="../images/mini/cat 174.jpg" type="image/jpeg">
+        <img class="footer-pic" src="../images/mini/cat 174.jpg" alt="Foto de Sibi" width="64" height="64">
+      </picture>
       <div>
         <strong>Sobre mí: Santiago Sibilla</strong>
         <p class="footer-desc">Estudiante. Informática. Música y dev.</p>
       </div>
     </div>
     <div class="footer-right">
-      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+      <a class="news-link" href="./contacto.html" target="_blank" rel="noopener">
         Suscribirme al newsletter →
       </a>
     </div>
   </div>
 </footer>
+
+<script src="footer-toggle.js"></script>
 
 
 <body class="bg">
@@ -35,13 +49,13 @@
 
       <!-- Menú alineado a la izquierda (igual que en index.html) -->
       <div class="nav-inner">
-        <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
-        <ul id="menu" class="menu" role="menu">
-          <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-          <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
-          <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi" target="_blank" rel="noopener">GitHub</a></li>
-          <li role="none"><a role="menuitem" href="./contacto.html">Contacto</a></li>
-          <li role="none" class="active"><a role="menuitem" aria-current="page" href="./posts.html">Todos los posts</a></li>
+                <!-- menu -->
+       <ul>
+          <li><a href="../links.html">Links</a></li>
+          <li><a href="./index.html">Blog</a></li>
+          <li><a href="./about.html">Sobre blog</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Posts</a></li>
         </ul>
       </div>
 
@@ -54,14 +68,20 @@
         <article class="card card--xs" itemscope itemtype="https://schema.org/BlogPosting">
           <a class="card-link" href="post1.html">
             <figure class="thumb">
-              <img loading="lazy" src="../images/cat 77.jpg" alt="Imagen del artículo Mi tema del mes" width="600" height="300" />
+              <picture>
+                <source srcset="../images/cat 77.jpg" type="image/jpeg">
+                <img loading="lazy" src="../images/cat 77.jpg" alt="Imagen del artículo Mi tema del mes" width="600" height="300" />
+              </picture>
               <figcaption class="badge">Musica</figcaption>
             </figure>
             <div class="card-body">
               <h2 class="card-title" itemprop="headline">Mi tema del mes</h2>
               <p class="card-excerpt" itemprop="description">
                 Mi cancion del mes, + por qué goes hard
-                <img src="../images/mini/goes hard 23.jpg" alt="" width="40" height="30">
+                <picture>
+                  <source srcset="../images/mini/goes hard 23.jpg" type="image/jpeg">
+                  <img src="../images/mini/goes hard 23.jpg" alt="" width="40" height="30">
+                </picture>
               </p>
               <time class="card-date" datetime="2025-10-28">28 Oct 2025</time>
               <span class="read-more">Leer más →</span>
@@ -73,7 +93,10 @@
         <article class="card card--xs" itemscope itemtype="https://schema.org/BlogPosting">
           <a class="card-link" href="post2.html">
             <figure class="thumb">
-              <img loading="lazy" src="../images/monster-hunter-world.jpg" alt="Imagen del artículo Build MHW" width="600" height="300" />
+              <picture>
+                <source srcset="../images/monster-hunter-world.jpg" type="image/jpeg">
+                <img loading="lazy" src="../images/monster-hunter-world.jpg" alt="Imagen del artículo Build MHW" width="600" height="300" />
+              </picture>
               <figcaption class="badge">Juegos</figcaption>
             </figure>
             <div class="card-body">
@@ -89,7 +112,10 @@
         <article class="card card--xs" itemscope itemtype="https://schema.org/BlogPosting">
           <a class="card-link" href="post3.html">
             <figure class="thumb">
-              <img loading="lazy" src="../images/galeriaScroll/12011109_de85d.gif" alt="Imagen del artículo Juegos favoritos" width="600" height="300" />
+              <picture>
+                <source srcset="../images/galeriaScroll/12011109_de85d.gif" type="image/gif">
+                <img loading="lazy" src="../images/galeriaScroll/12011109_de85d.gif" alt="Imagen del artículo Juegos favoritos" width="600" height="300" />
+              </picture>
               <figcaption class="badge">Juegos</figcaption>
             </figure>
             <div class="card-body">
@@ -105,13 +131,19 @@
         <article class="card card--xs" itemscope itemtype="https://schema.org/BlogPosting">
           <a class="card-link" href="post4.html">
             <figure class="thumb">
-              <img loading="lazy" src="../images/grunge.jpg" alt="Imagen del artículo Genre breakdown: Grunge" width="600" height="300" />
+              <picture>
+                <source srcset="../images/grunge.jpg" type="image/jpeg">
+                <img loading="lazy" src="../images/grunge.jpg" alt="Imagen del artículo Genre breakdown: Grunge" width="600" height="300" />
+              </picture>
               <figcaption class="badge">Musica</figcaption>
             </figure>
             <div class="card-body">
               <h2 class="card-title">Genre breakdown: Grunge</h2>
               <p class="card-excerpt">
-                <img src="../images/galeriaScroll/goes hard 8.jpg" alt="" width="40" height="30">
+                <picture>
+                  <source srcset="../images/galeriaScroll/goes hard 8.jpg" type="image/jpeg">
+                  <img src="../images/galeriaScroll/goes hard 8.jpg" alt="" width="40" height="30">
+                </picture>
                 Qué es, cómo se originó, canciones y/o artistas, influencias actuales.
               </p>
               <time class="card-date" datetime="2025-11-04">04 Nov 2025</time>
@@ -124,7 +156,10 @@
         <article class="card card--xs" itemscope itemtype="https://schema.org/BlogPosting">
           <a class="card-link" href="post5.html">
             <figure class="thumb">
-              <img loading="lazy" src="../images/oop.jpg" alt="Imagen del artículo Introducción a la Programación orientada a objetos" width="600" height="300" />
+              <picture>
+                <source srcset="../images/oop.jpg" type="image/jpeg">
+                <img loading="lazy" src="../images/oop.jpg" alt="Imagen del artículo Introducción a la Programación orientada a objetos" width="600" height="300" />
+              </picture>
               <figcaption class="badge">POO</figcaption>
             </figure>
             <div class="card-body">
@@ -143,4 +178,3 @@
 <br><br><br>
 
 </html>
-

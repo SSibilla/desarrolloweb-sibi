@@ -6,30 +6,39 @@
   <title>Blog — sibi's writing corner</title>
   <meta name="description" content="Notas y artículos del TP (blog) con maquetación básica vista en clase." />
   <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
 
+<button id="footer-toggle" class="footer-toggle-btn">
+  ▲
+</button>
+
 <!-- Footer overlay fijo -->
 <footer class="footer-overlay" role="contentinfo">
   <div class="footer-inner">
-    <!-- Izquierda: Sobre mí -->
     <div class="footer-about">
-      <img class="footer-pic" src="../images/mini/cat 174.jpg" alt="Foto de Sibi" width="64" height="64">
+      <picture>
+        <source srcset="../images/mini/cat 174.jpg" type="image/jpeg">
+        <img class="footer-pic" src="../images/mini/cat 174.jpg" alt="Foto de Sibi" width="64" height="64">
+      </picture>
       <div>
         <strong>Sobre mí: Santiago Sibilla</strong>
         <p class="footer-desc">Estudiante. Informática. Música y dev.</p>
       </div>
     </div>
-
-    <!-- Derecha: Newsletter -->
-    <nav class="footer-actions" aria-label="Acciones del sitio">
-      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+    <div class="footer-right">
+      <a class="news-link" href="./contacto.html" target="_blank" rel="noopener">
         Suscribirme al newsletter →
       </a>
-    </nav>
+    </div>
   </div>
 </footer>
+
+<script src="footer-toggle.js"></script>
 
 <body class="bg">
 
@@ -42,79 +51,100 @@
   <main id="contenido" class="blog-wrap">
     <section class="blog-box">
       <div class="nav-inner">
-      <!-- Botón hamburguesa -->
-      <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
 
-      <ul id="menu" class="menu" role="menu">
-        <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-        <li role="none" class="active"><a role="menuitem" aria-current="page" href="./index.html">Blog</a></li>
-        <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi">GitHub</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-        <li><a href="./posts.html">Todos los posts</a></li>
+        <!-- menu -->
+        <ul>
+          <li><a href="../links.html">Links</a></li>
+          <li><a href="./index.html">Blog</a></li>
+          <li><a href="./about.html">Sobre blog</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Posts</a></li>
+        </ul>
 
-      </ul>
-    </div>
+        <!-- <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
+
+        <ul id="menu" class="menu" role="menu">
+          <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
+          <li role="none" class="active"><a role="menuitem" aria-current="page" href="./index.html">Blog</a></li>
+          <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi">GitHub</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Todos los posts</a></li>
+
+        </ul> -->
+      
+      </div>
       <h1 class="blog-title">✍️ sibi's writing corner</h1>
 
       <section class="hero">
-  <h2 class="hero-title">Blog Personal: TP2</h2>
-  <p class="hero-desc">Notas cortas sobre cosas que me interesan 😸</p>
-</section>
+        <h2 class="hero-title">Blog Personal: TP2</h2>
+        <p class="hero-desc">Notas cortas sobre cosas que me interesan 😸</p>
+      </section>
 
       <!-- Posts: solo 3 y más compactos -->
-<section class="posts posts--home" aria-label="Artículos recientes">
-<h1>Algunos posts:</h1>
-  <!-- 1 -->
-  <article class="card card--xxs" itemscope itemtype="https://schema.org/BlogPosting">
-    <a class="card-link" href="post1.html">
-      <figure class="thumb">
-        <img loading="lazy" src="../images/cat 77.jpg" alt="Imagen del artículo Mi tema del mes" width="600" height="300" />
-        <figcaption class="badge">Musica</figcaption>
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title" itemprop="headline">Mi tema del mes</h2>
-        <p class="card-excerpt" itemprop="description">
-          Mi cancion del mes, + por qué goes hard
-          <img src="../images/mini/goes hard 23.jpg" alt="" width="34" height="24">
-        </p>
-        <time class="card-date" datetime="2025-10-28">28 Oct 2025</time>
-        <span class="read-more">Leer más →</span>
-      </div>
-    </a>
-  </article>
+      <section class="posts posts--home" aria-label="Artículos recientes">
+        <h1>Algunos posts:</h1>
+        <!-- 1 -->
+        <article class="card card--xxs" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post1.html">
+            <figure class="thumb">
+              <picture>
+                <source srcset="../images/cat 77.jpg" type="image/jpeg">
+                <img loading="lazy" src="../images/cat 77.jpg" alt="Imagen del artículo Mi tema del mes" width="600" height="300" />
+              </picture>
+              <figcaption class="badge">Musica</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title" itemprop="headline">Mi tema del mes</h2>
+              <p class="card-excerpt" itemprop="description">
+                Mi cancion del mes, + por qué goes hard
+                <picture>
+                  <source srcset="../images/mini/goes hard 23.jpg" type="image/jpeg">
+                  <img src="../images/mini/goes hard 23.jpg" alt="" width="34" height="24">
+                </picture>
+              </p>
+              <time class="card-date" datetime="2025-10-28">28 Oct 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
 
-  <!-- 2 -->
-  <article class="card card--xxs" itemscope itemtype="https://schema.org/BlogPosting">
-    <a class="card-link" href="post2.html">
-      <figure class="thumb">
-        <img loading="lazy" src="../images/monster-hunter-world.jpg" alt="Imagen del artículo Build MHW" width="600" height="300" />
-        <figcaption class="badge">Juegos</figcaption>
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Build MHW</h2>
-        <p class="card-excerpt">Build que uso en el Monster Hunter: World.</p>
-        <time class="card-date" datetime="2025-11-01">01 Nov 2025</time>
-        <span class="read-more">Leer más →</span>
-      </div>
-    </a>
-  </article>
+        <!-- 2 -->
+        <article class="card card--xxs" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post2.html">
+            <figure class="thumb">
+              <picture>
+                <source srcset="../images/monster-hunter-world.jpg" type="image/jpeg">
+                <img loading="lazy" src="../images/monster-hunter-world.jpg" alt="Imagen del artículo Build MHW" width="600" height="300" />
+              </picture>
+              <figcaption class="badge">Juegos</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Build MHW</h2>
+              <p class="card-excerpt">Build que uso en el Monster Hunter: World.</p>
+              <time class="card-date" datetime="2025-11-01">01 Nov 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
 
-  <!-- 3 -->
-  <article class="card card--xxs" itemscope itemtype="https://schema.org/BlogPosting">
-    <a class="card-link" href="post3.html">
-      <figure class="thumb">
-        <img loading="lazy" src="../images/galeriaScroll/12011109_de85d.gif" alt="Imagen del artículo Juegos favoritos" width="600" height="300" />
-        <figcaption class="badge">Juegos</figcaption>
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Juegos favoritos</h2>
-        <p class="card-excerpt">Mi listado de juegazos y por qué lo son.</p>
-        <time class="card-date" datetime="2025-11-01">01 Nov 2025</time>
-        <span class="read-more">Leer más →</span>
-      </div>
-    </a>
-  </article>
-</section>
-
+        <!-- 3 -->
+        <article class="card card--xxs" itemscope itemtype="https://schema.org/BlogPosting">
+          <a class="card-link" href="post3.html">
+            <figure class="thumb">
+              <picture>
+                <source srcset="../images/galeriaScroll/12011109_de85d.gif" type="image/gif">
+                <img loading="lazy" src="../images/galeriaScroll/12011109_de85d.gif" alt="Imagen del artículo Juegos favoritos" width="600" height="300" />
+              </picture>
+              <figcaption class="badge">Juegos</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Juegos favoritos</h2>
+              <p class="card-excerpt">Mi listado de juegazos y por qué lo son.</p>
+              <time class="card-date" datetime="2025-11-01">01 Nov 2025</time>
+              <span class="read-more">Leer más →</span>
+            </div>
+          </a>
+        </article>
+      </section>
 
       <br><br><br>

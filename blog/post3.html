@@ -6,9 +6,19 @@
   <title>Post 3</title>
   <meta name="description" content="Juegos" />
   <link rel="icon" href="../images/stampcat.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
   <link rel="stylesheet" href="blog.css" />
   <script defer src="blog.js"></script>
 </head>
+
+<button id="footer-toggle" class="footer-toggle-btn">
+  ▲
+</button>
+
 <!-- Footer overlay fijo -->
 <footer class="footer-overlay" role="contentinfo">
   <div class="footer-inner">
@@ -20,12 +30,15 @@
       </div>
     </div>
     <div class="footer-right">
-      <a class="news-link" href="https://tu-enlace-de-newsletter.com" target="_blank" rel="noopener">
+      <a class="news-link" href="./contacto.html" target="_blank" rel="noopener">
         Suscribirme al newsletter →
       </a>
     </div>
   </div>
 </footer>
+
+<script src="footer-toggle.js"></script>
+
 
 <body class="bg">
   <main class="blog-wrap">
@@ -34,14 +47,14 @@
       <!-- NAV: botón a la izquierda + menú desplegable -->
 <nav class="nav" aria-label="Principal">
   <div class="nav-inner">
-    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
-    <ul id="menu" class="menu" role="menu">
-      <li role="none"><a role="menuitem" href="../links.html">Links</a></li>
-      <li role="none"><a role="menuitem" href="./index.html">Blog</a></li>
-      <li role="none"><a role="menuitem" href="./posts.html">Todos los posts</a></li>
-      <li role="none"><a role="menuitem" href="./contacto.html">Contacto</a></li>
-      <li role="none"><a role="menuitem" href="https://github.com/SSibilla/desarrolloweb-sibi" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
+            <!-- menu -->
+       <ul>
+          <li><a href="../links.html">Links</a></li>
+          <li><a href="./index.html">Blog</a></li>
+          <li><a href="./about.html">Sobre blog</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./posts.html">Posts</a></li>
+        </ul>
   </div>
 </nav>
 
@@ -50,20 +63,33 @@
     </header>
     <section class="content" itemprop="articleBody" style="text-align:left; max-width:860px; margin:16px auto;">
       <ul>
-        <li><strong>Resident Evil 4:</strong> cada arena es un <em>puzzle de combate</em>; cámara al hombro, ritmo y variedad tremenda. <a href="https://residentevil.fandom.com/es/wiki/Resident_Evil_4" target="_blank" rel="noopener">+info</a></li>
-        <li><strong>The Warriors:</strong> beat ’em up con identidad de pandilla, co-op y misiones que expanden la película. <a href="https://thewarriors.fandom.com/es/wiki/The_Warriors_(videojuego)" target="_blank" rel="noopener">+info</a></li>
-        <li><strong>Guilty Gear: Strive:</strong> golpe contundente, rollback netcode y estilo anime de referencia. <a href="https://guilty-gear.fandom.com/es/wiki/Guilty_Gear_-Strive-" target="_blank" rel="noopener">+info</a></li>
-        <li><strong>Monster Hunter: World:</strong> ecosistemas vivos; progresión por equipo y maestría. <a href="https://es.wikipedia.org/wiki/Monster_Hunter:_World" target="_blank" rel="noopener">+info</a></li>
-        <li><strong>DBZ Budokai Tenkaichi 3:</strong> plantel enorme, transformaciones y arenas destructibles; fan service puro. <a href="https://dragonball.fandom.com/es/wiki/Dragon_Ball_Z:_Budokai_Tenkaichi_3" target="_blank" rel="noopener">+info</a></li>
-        <li><strong>MudRunner:</strong> zen del off-road; física del barro, cabrestante y rutas imposibles. <a href="https://spintires.fandom.com/wiki/MudRunner" target="_blank" rel="noopener">+info</a></li>
-      </ul>
+  <li><strong>Resident Evil 4:</strong> cada arena es un <em>puzzle de combate</em>; cámara al hombro, ritmo y variedad tremenda. El juego redefine la acción táctil: gestión de espacio, empujes, parries, rotaciones y aprovechamiento del entorno. Su mezcla de tensión + movilidad creó un estándar para shooters modernos. <a href="https://residentevil.fandom.com/es/wiki/Resident_Evil_4" target="_blank" rel="noopener">+info</a></li>
 
-      <p><em>Qué tienen en común:</em> aprendizaje por sistemas (no por tutoriales), identidad estética y una “sensación” de juego muy marcada.</p>
+  <li><strong>The Warriors:</strong> beat ’em up con identidad de pandilla, co-op y misiones que expanden la película. Su estilo se apoya en controles pesados, peleas callejeras que se sienten “sucias” y un sistema de misiones que mezcla estrategia ligera con caos. Fun fact: Rockstar grabó voces nuevas con actores de la peli original. <a href="https://thewarriors.fandom.com/es/wiki/The_Warriors_(videojuego)" target="_blank" rel="noopener">+info</a></li>
+
+  <li><strong>Guilty Gear: Strive:</strong> golpe contundente, rollback netcode y estilo anime de referencia. Animaciones 2.5D que parecen dibujo tradicional, sistema sencillo para principiantes pero profundo al dominar R.I.S.C., Roman Cancels y presión en esquina. Uno de los mejores netcodes del género de peleas. <a href="https://guilty-gear.fandom.com/es/wiki/Guilty_Gear_-Strive-" target="_blank" rel="noopener">+info</a></li>
+
+  <li><strong>Monster Hunter: World:</strong> ecosistemas vivos; progresión por equipo y maestría. Combate técnico, loop adictivo y un diseño donde cada monstruo es una lectura constante de animaciones, patrones y ventanas. Flujo de exploración + cacería + craft que engancha incluso sin historia pesada. <a href="https://es.wikipedia.org/wiki/Monster_Hunter:_World" target="_blank" rel="noopener">+info</a></li>
+
+  <li><strong>DBZ Budokai Tenkaichi 3:</strong> plantel enorme, transformaciones y arenas destructibles; fan service puro. El sistema de batalla 3D captura la fantasía del anime mejor que muchos juegos modernos: ráfagas gigantes, choques de ki, movilidad libre y combos que se sienten “de la serie”. A día de hoy sigue siendo comunidad competitiva activa. <a href="https://dragonball.fandom.com/es/wiki/Dragon_Ball_Z:_Budokai_Tenkaichi_3" target="_blank" rel="noopener">+info</a></li>
+
+  <li><strong>MudRunner:</strong> zen del off-road; física del barro, cabrestante y rutas imposibles. Es un juego de paciencia: leer el terreno, calcular peso, usar marchas cortas y abrazar el fracaso lento. Su física es tan precisa que cada centímetro importa. Muy usado incluso por fans del off-road real. <a href="https://spintires.fandom.com/wiki/MudRunner" target="_blank" rel="noopener">+info</a></li>
+</ul>
+
+<p><em>Qué tienen en común:</em> aprendizaje por sistemas (no por tutoriales), identidad estética marcada, coherencia interna y una “sensación” de juego muy distinta entre ellos pero igual de sólida. Cada uno recompensa la observación, no la acción impulsiva: entender cómo funciona su mundo es la clave para disfrutarlos.</p>
+
       <p><em>Pregunta para reader:</em> ¿Cuál de estos volverías a pasar hoy y qué te re-atrapa?</p>
 
-      <figure class="thumb" style="max-width:860px; margin:12px auto;">
-        <img loading="lazy" src="../images/mudrunner.jpg" alt="Collage de juegos favoritos" width="1200" height="600" />
-      </figure>
+  <div style="text-align: center;">
+  <div class="dropdown">
+        <div class="imagehover"><p >Hazme hover para ver la imagen!!</p></div>
+        <div class="dropdown-content">
+          <img src="../images/mudrunner.jpg" alt="mudrunner" width="1200" height="600">
+          
+        </div>
+        </div>
+      </div>
+
       <p><a class="read-more" href="index.html">← Volver al blog</a></p>
     </section>
   </article>

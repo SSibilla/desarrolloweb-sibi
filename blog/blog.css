@@ -12,10 +12,13 @@
 html,body{ height:100%; }
 body.bg{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
   color:var(--text);
-  background:#000 url("../images/goes\ hard\ 150.jpg") repeat top left;
+  font-family: Kedebideri;
+  background:#000 url("../images/wallpaper3.jpg") repeat top left;
+  background-size: 200px auto;
+  
 }
+
 
 /* Barras decorativas */
 .gif-bar{ position:fixed; left:0; width:100%; height:64px; z-index:5; background:url("../images/le-kitties.gif") repeat-x; }
@@ -252,6 +255,53 @@ body.bg { padding-bottom: var(--footer-h); }
 }
 .btn-primary:hover{ box-shadow:0 4px 16px rgba(0,0,0,.35); }
 
+/* --- Animación mostrar/ocultar footer --- */
+.footer-overlay {
+  transform: translateY(0);
+  transition: transform .35s ease;
+}
+
+.footer-overlay.hidden {
+  transform: translateY(100%);
+}
+
+/* Botón flotante para mostrar/ocultar */
+.footer-toggle-btn{
+  position: fixed;
+  bottom: var(--footer-h);
+  right: 20px;
+  background:#000000cc;
+  color:#ffd166;
+  border:1px solid #ffffff33;
+  border-radius:10px;
+  padding:.45rem .75rem;
+  cursor:pointer;
+  z-index:1000;
+  transition: background .25s;
+}
+
+.footer-toggle-btn:hover{
+  background:#000000ee;
+}
+
+/* Cuando el footer está oculto, el botón baja */
+.footer-overlay.hidden + .footer-toggle-btn,
+#footer-toggle.footer-up {
+  bottom: 16px;
+}
+
+/* Link del newsletter con el mismo color que el botón */
+.footer-right .news-link,
+.footer-right .news-link:visited{
+  color: #ffd166;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-right .news-link:hover{
+  text-decoration-thickness: 2px;
+}
+
 /* ——— Menú alineado a un lado (como en index) ——— */
 .nav-inner{ display:flex; align-items:flex-start; gap:10px; }
 .menu{ margin-top: 6px; } /* menú justo debajo del botón */
@@ -282,3 +332,67 @@ body.bg { padding-bottom: var(--footer-h); }
 .card.card--xxs .card-excerpt{ font-size: 13px; color:#cdcdcd; line-height: 1.35; }
 .card.card--xxs .card-date{ font-size: .8rem; }
 .card.card--xxs .read-more{ font-size: .85rem; }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  background: transparent;   /* importante: sin fondo */
+  padding: 0;                /* sin padding grande */
+  width: auto;               /* que se adapte a la imagen */
+}
+
+
+ul.horizontal {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  background: transparent;           /* sin barra negra */
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+.imagehover {
+  color: #ffd166;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+
+}
