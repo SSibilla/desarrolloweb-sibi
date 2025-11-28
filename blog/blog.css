@@ -413,3 +413,86 @@ ul li a:hover {
     height: auto;
   }
 }
+
+/* ===== NAV KEBAB NUEVO ===== */
+
+/* Contenedor del nav dentro de la caja */
+.nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* nada centrado */
+  gap: 8px;
+  width: 100%;
+  margin: 0;                     /* sin centrar con margin:auto */
+}
+
+/* Botón kebab */
+.burger{
+  background: rgba(0,0,0,.55);
+  border: 1px solid #ffffff33;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: .35rem .55rem;
+  cursor: pointer;
+}
+
+/* Caja del menú */
+.menu{
+  display: none;                 /* cerrado por defecto */
+  list-style: none;
+  margin: 0;
+  padding: .4rem .6rem;
+  background: rgba(0,0,0,.65);
+  border: 1px solid #ffffff33;
+  border-radius: 10px;
+  gap: .5rem;
+}
+
+/* Cuando el JS agrega la clase "open" */
+.menu.open{
+  display: flex;
+}
+
+/* Links dentro del menú */
+.menu a{
+  color: var(--muted);
+  text-decoration: none;
+  padding: .25rem .45rem;
+  border-radius: 8px;
+}
+
+.menu a:hover,
+.menu .active a{
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Desktop: menú en fila */
+@media (min-width: 901px){
+  .menu{
+    flex-direction: row;
+  }
+}
+
+/* Móvil: menú en columna, debajo del botón, alineado a la izquierda */
+@media (max-width: 900px){
+  .nav-inner{
+    position: relative;
+  }
+
+  .menu{
+    position: absolute;
+    top: 0;              /* alineado a la altura del botón   */
+    left: 48px;          /* aparece a la derecha del botón   */
+    flex-direction: row; /* sigue horizontal                  */
+    white-space: nowrap; /* no pasa a segunda línea           */
+    padding: .35rem .6rem;
+  }
+
+  .menu li{
+    margin-right: .35rem;   /* pequeño espacio entre items */
+  }
+}
+
