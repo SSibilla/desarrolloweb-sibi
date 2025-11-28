@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Donar – Sonrisas en Marcha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Calculá el impacto de tu donación en alimentación, educación, prevención y apoyo psicosocial."
+  />
+    <link rel="icon" href="images/logo-sonrisas.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ <header>
+  <div class="container navbar">
+
+        <div class="navbar-brand">
+  <img src="images/logo-sonrisas.png" alt="Logo Sonrisas en Marcha" class="navbar-logo">
+  <span>Sonrisas en Marcha</span>
+</div>
+
+    <!-- BOTÓN KEBAB -->
+    <button id="menu-toggle" class="menu-kebab">☰</button>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="../links.html">Linktree</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nosotros.html">Sobre nosotros</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="donar.html" class="btn-donar">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Donar</h1>
+        <p class="section-subtitle">
+          Probá nuestra calculadora de impacto y descubrí qué hacés posible con tu aporte.
+        </p>
+
+        <div class="donation-layout">
+          <!-- FORMULARIO -->
+          <section>
+            <div class="card">
+              <h2 class="card-header">Elegí tu aporte</h2>
+
+              <div class="form-field">
+                <span class="form-label">Monto rápido (ARS)</span>
+                <div class="donation-quick">
+                  <button type="button" data-amount="15000">$15.000</button>
+                  <button type="button" data-amount="50000">$50.000</button>
+                  <button type="button" data-amount="100000">$100.000</button>
+                  <button type="button" data-amount="250000">$250.000</button>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="amountInput">Otro monto (ARS)</label>
+                <input
+                  id="amountInput"
+                  type="number"
+                  min="1000"
+                  step="500"
+                  class="input"
+                  placeholder="Ingresá el monto que quieras donar"
+                />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="frequency">Frecuencia</label>
+                <select id="frequency" class="select">
+                  <option value="unica">Única vez</option>
+                  <option value="mensual">Mensual</option>
+                </select>
+              </div>
+
+              <div><a href="contacto.html" style="text-decoration: none;"><h2 class="card-header">Si tenes una empresa y nos queres ayudar con cualquier producto; contactanos! (click)</h2></a></div>
+
+              <br>
+
+              <button id="calculateBtn" class="btn-primary" type="button">
+                Calcular impacto
+              </button>
+              <p id="donationError" class="error" style="display:none;"></p>
+            </div>
+          </section>
+
+          <!-- IMPACTO -->
+          <section>
+            <div class="card">
+              <h2 class="card-header">Impacto estimado</h2>
+              <p style="font-size:0.85rem; margin-bottom:1rem;">
+                Los valores son estimaciones para ilustrar cómo se distribuye tu donación entre los ejes
+                de trabajo.
+              </p>
+
+              <div class="impact-list">
+                <div>
+                  <div class="impact-item-label">
+                    <span>Raciones de comida</span>
+                    <span id="impactComida">0</span>
+                  </div>
+                  <div class="impact-bar">
+                    <div id="barComida" class="impact-bar-fill"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="impact-item-label">
+                    <span>Kits escolares</span>
+                    <span id="impactKits">0</span>
+                  </div>
+                  <div class="impact-bar">
+                    <div id="barKits" class="impact-bar-fill"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="impact-item-label">
+                    <span>Talleres de prevención</span>
+                    <span id="impactPrevencion">0</span>
+                  </div>
+                  <div class="impact-bar">
+                    <div id="barPrevencion" class="impact-bar-fill"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="impact-item-label">
+                    <span>Sesiones psicosociales</span>
+                    <span id="impactPsico">0</span>
+                  </div>
+                  <div class="impact-bar">
+                    <div id="barPsico" class="impact-bar-fill"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top:1.2rem; font-size:0.82rem;" id="summaryText">
+                Ingresá un monto y presioná “Calcular impacto” para ver qué hacés posible.
+              </div>
+
+              <hr style="border-color:#111827; margin:1.2rem 0;" />
+
+              <div style="font-size:0.78rem;" id="history">
+                <strong>Últimas simulaciones (solo en este dispositivo):</strong>
+                <div id="historyList"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> Sonrisas en Marcha · ONG por la infancia
+      </div>
+      <div class="footer-social">
+        <span>Seguinos:</span>
+        <a href="https://www.instagram.com/cruzrojaarg">Instagram</a>
+        <a href="https://www.facebook.com/CruzRojaArg">Facebook</a>
+        <a href="https://www.youtube.com/@CruzRojaArgentinaOK">YouTube</a>
+      </div>
+    </div>
+  </footer>
+    
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // --------- ELEMENTOS ----------
+    const quickButtons = document.querySelectorAll(".donation-quick button");
+    const amountInput = document.getElementById("amountInput");
+    const frequencySelect = document.getElementById("frequency");
+    const donationError = document.getElementById("donationError");
+    const calculateBtn = document.getElementById("calculateBtn");
+
+    const impactElements = {
+      comida: document.getElementById("impactComida"),
+      kits: document.getElementById("impactKits"),
+      prevencion: document.getElementById("impactPrevencion"),
+      psico: document.getElementById("impactPsico"),
+      barComida: document.getElementById("barComida"),
+      barKits: document.getElementById("barKits"),
+      barPrevencion: document.getElementById("barPrevencion"),
+      barPsico: document.getElementById("barPsico"),
+      summary: document.getElementById("summaryText"),
+      historyList: document.getElementById("historyList"),
+    };
+
+    // --------- BOTONES RÁPIDOS ----------
+    quickButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        quickButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        amountInput.value = btn.getAttribute("data-amount");
+      });
+    });
+
+    // --------- FUNCIONES ----------
+    function calcularImpacto() {
+      const monto = parseInt(amountInput.value, 10);
+
+      if (isNaN(monto) || monto < 1000) {
+        donationError.textContent =
+          "Ingresá un monto válido (mínimo $1.000).";
+        donationError.style.display = "block";
+        return;
+      }
+      donationError.style.display = "none";
+
+      // valores base (ARS)
+      const costoRacion = 1000;
+      const costoKit = 8000;
+      const costoPrev = 5000;
+      const costoPsico = 6000;
+
+      const raciones = Math.floor(monto / costoRacion);
+      const kits = Math.floor(monto / costoKit);
+      const prev = Math.floor(monto / costoPrev);
+      const psico = Math.floor(monto / costoPsico);
+
+      impactElements.comida.textContent = raciones;
+      impactElements.kits.textContent = kits;
+      impactElements.prevencion.textContent = prev;
+      impactElements.psico.textContent = psico;
+
+      // normalizamos barras
+      const metaRaciones = 100;
+      const metaKits = 20;
+      const metaPrev = 30;
+      const metaPsico = 25;
+
+      impactElements.barComida.style.width =
+        Math.min((raciones / metaRaciones) * 100, 100) + "%";
+      impactElements.barKits.style.width =
+        Math.min((kits / metaKits) * 100, 100) + "%";
+      impactElements.barPrevencion.style.width =
+        Math.min((prev / metaPrev) * 100, 100) + "%";
+      impactElements.barPsico.style.width =
+        Math.min((psico / metaPsico) * 100, 100) + "%";
+
+      const frecuencia =
+        frequencySelect.value === "mensual"
+          ? "cada mes"
+          : "en una única donación";
+
+      impactElements.summary.textContent =
+        "Con " +
+        new Intl.NumberFormat("es-AR", {
+          style: "currency",
+          currency: "ARS",
+          maximumFractionDigits: 0,
+        }).format(monto) +
+        " " +
+        frecuencia +
+        " hacés posible aproximadamente " +
+        raciones +
+        " raciones de comida, " +
+        kits +
+        " kits escolares, " +
+        prev +
+        " talleres de prevención y " +
+        psico +
+        " sesiones de acompañamiento psicosocial.";
+
+      // intento guardar y volver a dibujar historial
+      try {
+        guardarEnHistorial(monto, frequencySelect.value);
+      } catch (e) {
+        console.warn("No se pudo guardar en localStorage:", e);
+      }
+      renderHistorial();
+    }
+
+    function guardarEnHistorial(monto, frecuencia) {
+      const entry = {
+        monto: monto,
+        frecuencia: frecuencia,
+        fecha: new Date().toLocaleString(),
+      };
+      const actual = JSON.parse(
+        localStorage.getItem("donacionesSimuladas") || "[]"
+      );
+      actual.unshift(entry);
+      const nuevo = actual.slice(0, 5); // solo guardo las últimas 5
+      localStorage.setItem("donacionesSimuladas", JSON.stringify(nuevo));
+    }
+
+    function renderHistorial() {
+      const actual = JSON.parse(
+        localStorage.getItem("donacionesSimuladas") || "[]"
+      );
+      if (!actual.length) {
+        impactElements.historyList.textContent =
+          "Todavía no realizaste simulaciones.";
+        return;
+      }
+      impactElements.historyList.innerHTML = "";
+      actual.forEach((item) => {
+        const div = document.createElement("div");
+        div.textContent =
+          item.fecha +
+          " · " +
+          new Intl.NumberFormat("es-AR", {
+            style: "currency",
+            currency: "ARS",
+            maximumFractionDigits: 0,
+          }).format(item.monto) +
+          (item.frecuencia === "mensual" ? " (mensual)" : " (única vez)");
+        impactElements.historyList.appendChild(div);
+      });
+    }
+
+    // --------- EVENTOS ----------
+    calculateBtn.addEventListener("click", calcularImpacto);
+
+    // mostrar historial al cargar la página
+    renderHistorial();
+  });
+</script>
+
+
+<script>
+  const menuBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+  });
+</script>
+
+
+</body>
+</html>

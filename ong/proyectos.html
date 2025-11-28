@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Proyectos – Sonrisas en Marcha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Conocé los proyectos de la ONG Sonrisas en Marcha en educación, nutrición, prevención y apoyo psicosocial."
+  />
+    <link rel="icon" href="images/logo-sonrisas.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+  <div class="container navbar">
+
+        <div class="navbar-brand">
+  <img src="images/logo-sonrisas.png" alt="Logo Sonrisas en Marcha" class="navbar-logo">
+  <span>Sonrisas en Marcha</span>
+</div>
+
+    <!-- BOTÓN KEBAB -->
+    <button id="menu-toggle" class="menu-kebab">☰</button>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="../links.html">Linktree</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nosotros.html">Sobre nosotros</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="donar.html" class="btn-donar">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Nuestros proyectos</h1>
+        <p class="section-subtitle">
+          Organizamos nuestro trabajo en cuatro ejes: Educación, Nutrición, Prevención y Apoyo Psicosocial.
+        </p>
+
+        <div class="grid grid-4" style="margin-bottom:1.8rem;">
+          <button class="btn-outline" data-filter="todos">Todos</button>
+          <button class="btn-outline" data-filter="educacion">Educación</button>
+          <button class="btn-outline" data-filter="nutricion">Nutrición</button>
+          <button class="btn-outline" data-filter="prevencion">Prevención</button>
+          <button class="btn-outline" data-filter="psicosocial">Apoyo psicosocial</button>
+        </div>
+
+        <div class="grid grid-3" id="projectGrid">
+          <article class="project-thumb" data-category="nutricion">
+            <img src="images/proyecto-comedor.jpg" alt="Niños almorzando en comedor comunitario" />
+            <div class="project-thumb-info">
+              <div class="project-tag">Nutrición</div>
+              <h2 class="project-title">Comedor Rayito de Sol</h2>
+              <p>
+                Brindamos almuerzos y meriendas a más de 80 niños por día en un
+                comedor comunitario de la zona sur de Buenos Aires.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-thumb" data-category="educacion">
+            <img src="images/proyecto-aula.jpg" alt="Clases de apoyo escolar con voluntarios" />
+            <div class="project-thumb-info">
+              <div class="project-tag">Educación</div>
+              <h2 class="project-title">Aula Itinerante</h2>
+              <p>
+                Equipo de docentes y voluntarios que recorre barrios con
+                materiales didácticos, libros y laptops para reforzar la
+                escolaridad.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-thumb" data-category="prevencion">
+            <img src="images/proyecto-salud.jpg" alt="Jornada de controles médicos" />
+            <div class="project-thumb-info">
+              <div class="project-tag">Prevención</div>
+              <h2 class="project-title">Primero la Salud</h2>
+              <p>
+                Jornadas trimestrales de controles básicos y charlas sobre
+                higiene, alimentación saludable y cuidados en la infancia.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-thumb" data-category="psicosocial">
+            <img src="images/proyecto-psico.jpg" alt="Actividad lúdica con niños y psicóloga" />
+            <div class="project-thumb-info">
+              <div class="project-tag">Apoyo psicosocial</div>
+              <h2 class="project-title">Espacios que Acompañan</h2>
+              <p>
+                Talleres lúdicos y espacios de escucha coordinados por
+                psicólogos y trabajadores sociales para niños y familias.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-thumb" data-category="nutricion">
+            <img src="images/proyecto-merienda.jpg" alt="Merienda comunitaria para niños" />
+            <div class="project-thumb-info">
+              <div class="project-tag">Nutrición</div>
+              <h2 class="project-title">Meriendas que Abrigan</h2>
+              <p>
+                Refuerzo de meriendas en invierno con leche, frutas y panes
+                caseros en distintos merenderos barriales.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-thumb" data-category="educacion">
+            <img src="images/proyecto-digital.jpg" alt="Niños utilizando computadoras" />
+            <div class="project-thumb-info">
+              <div class="project-tag">Educación</div>
+              <h2 class="project-title">Puentes Digitales</h2>
+              <p>
+                Espacios de alfabetización digital para que niñas y niños
+                desarrollen habilidades tecnológicas básicas.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <section class="section" style="padding-top:2.2rem;">
+          <h2 class="section-title">Meta mensual</h2>
+          <p class="section-subtitle">
+            Nos proponemos cubrir al menos el 70% de la meta mensual de cada eje de trabajo.
+          </p>
+
+          <div class="grid grid-2">
+            <article class="card">
+              <h3 class="card-header">Comedor Rayito de Sol</h3>
+              <p>Meta mensual cubierta: <strong>70%</strong></p>
+            </article>
+
+            <article class="card">
+              <h3 class="card-header">Aula Itinerante</h3>
+              <p>Meta mensual cubierta: <strong>55%</strong></p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox-backdrop" id="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close" id="lightboxClose">Cerrar ×</span>
+      <img id="lightboxImg" src="" alt="" />
+      <h2 class="project-title" id="lightboxTitle"></h2>
+      <p id="lightboxText"></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> Sonrisas en Marcha · ONG por la infancia
+      </div>
+      <div class="footer-social">
+        <span>Seguinos:</span>
+        <a href="https://www.instagram.com/cruzrojaarg">Instagram</a>
+        <a href="https://www.facebook.com/CruzRojaArg">Facebook</a>
+        <a href="https://www.youtube.com/@CruzRojaArgentinaOK">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // filtro simple
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const cards = document.querySelectorAll("#projectGrid .project-thumb");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const category = btn.getAttribute("data-filter");
+        cards.forEach((card) => {
+          const cardCategory = card.getAttribute("data-category");
+          if (category === "todos" || category === cardCategory) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // lightbox
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxText = document.getElementById("lightboxText");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const img = card.querySelector("img");
+        const title = card.querySelector(".project-title").textContent;
+        const text = card.querySelector("p").textContent;
+
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxTitle.textContent = title;
+        lightboxText.textContent = text;
+
+        lightbox.style.display = "flex";
+      });
+    });
+
+    lightboxClose.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+
+  <script>
+  const menuBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>

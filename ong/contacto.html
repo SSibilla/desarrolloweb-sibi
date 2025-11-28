@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contacto – Sonrisas en Marcha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Ponete en contacto con la ONG Sonrisas en Marcha para donaciones, alianzas o voluntariado."
+  />
+    <link rel="icon" href="images/logo-sonrisas.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+  <div class="container navbar">
+
+        <div class="navbar-brand">
+  <img src="images/logo-sonrisas.png" alt="Logo Sonrisas en Marcha" class="navbar-logo">
+  <span>Sonrisas en Marcha</span>
+</div>
+
+    <!-- BOTÓN KEBAB -->
+    <button id="menu-toggle" class="menu-kebab">☰</button>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="../links.html">Linktree</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nosotros.html">Sobre nosotros</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="donar.html" class="btn-donar">Donar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Contacto</h1>
+        <p class="section-subtitle">
+          Escribinos para consultas sobre donaciones, voluntariado o alianzas.
+        </p>
+
+        <div class="grid grid-2">
+          <section>
+            <form class="form" id="contactForm" novalidate>
+              <div class="form-field">
+                <label for="name" class="form-label">Nombre y apellido</label>
+                <input id="name" type="text" class="input" required />
+                <p class="error" id="errorName" style="display:none;"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input id="email" type="email" class="input" required />
+                <p class="error" id="errorEmail" style="display:none;"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="subject" class="form-label">Asunto</label>
+                <input id="subject" type="text" class="input" required />
+                <p class="error" id="errorSubject" style="display:none;"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea id="message" class="input" required></textarea>
+                <p class="error" id="errorMessage" style="display:none;"></p>
+              </div>
+
+              <button type="submit" class="btn-primary">Enviar mensaje</button>
+              <p id="contactOk" style="margin-top:0.8rem; font-size:0.8rem; display:none;">
+                ¡Gracias! Tu mensaje fue enviado (simulación).
+              </p>
+            </form>
+          </section>
+
+          <section>
+            <div class="card">
+              <h2 class="card-header">Datos de contacto</h2>
+              <p style="font-size:0.9rem;">
+                <strong>Email:</strong> info@sonrisasenmarcha.org<br />
+                <strong>Teléfono:</strong> +54 11 7175-8008<br />
+                <strong>Horario de atención:</strong> Lunes a viernes de 7:45 a 22:30 h.
+              </p>
+
+              <hr style="border-color:#111827; margin:1rem 0;" />
+
+              <p style="font-size:0.9rem; margin-bottom:0.5rem;">
+                <strong>Sede central (ficticia):</strong><br />
+                Lima 757, Ciudad Autónoma de Buenos Aires, Argentina.
+              </p>
+
+              <div style="border-radius:0.75rem; overflow:hidden; border:1px solid #111827;">
+                <iframe
+                  title="Mapa sede ONG"
+                  src="https://www.google.com/maps?q=Lima%20757%2C%20C1073%20Ciudad%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina&output=embed"
+                  width="100%"
+                  height="220"
+                  style="border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> Sonrisas en Marcha · ONG por la infancia
+      </div>
+      <div class="footer-social">
+        <span>Seguinos:</span>
+        <a href="https://www.instagram.com/cruzrojaarg">Instagram</a>
+        <a href="https://www.facebook.com/CruzRojaArg">Facebook</a>
+        <a href="https://www.youtube.com/@CruzRojaArgentinaOK">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const subject = document.getElementById("subject");
+      const message = document.getElementById("message");
+
+      let valid = true;
+
+      function setError(id, msg) {
+        const el = document.getElementById(id);
+        if (msg) {
+          el.textContent = msg;
+          el.style.display = "block";
+          valid = false;
+        } else {
+          el.style.display = "none";
+        }
+      }
+
+      setError("errorName", name.value.trim() ? "" : "Ingresá tu nombre.");
+      setError(
+        "errorEmail",
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())
+          ? ""
+          : "Ingresá un email válido."
+      );
+      setError(
+        "errorSubject",
+        subject.value.trim() ? "" : "Ingresá un asunto."
+      );
+      setError(
+        "errorMessage",
+        message.value.trim() ? "" : "Escribí un mensaje."
+      );
+
+      if (!valid) return;
+
+      document.getElementById("contactOk").style.display = "block";
+      contactForm.reset();
+    });
+  </script>
+
+  <script>
+  const menuBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>
