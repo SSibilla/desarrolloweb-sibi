@@ -153,6 +153,14 @@ body.bg{
   color: #ffe09a; /* un toque más claro al hover */
 }
 
+/* Imágenes dentro del contenido del post: responsivas */
+.blog-box .content img {
+  max-width: 100%;   /* nunca más ancho que el recuadro del post */
+  height: auto;      /* mantiene proporción */
+  display: block;    /* elimina espacios raros en línea */
+}
+
+
 /* Link del GitHub con el mismo estilo que "Leer más" */
 .author-links a,
 .author-links a:visited{
