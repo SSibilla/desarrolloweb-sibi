@@ -52,13 +52,14 @@
           Organizamos nuestro trabajo en cuatro ejes: Educación, Nutrición, Prevención y Apoyo Psicosocial.
         </p>
 
-        <div class="grid grid-4" style="margin-bottom:1.8rem;">
-          <button class="btn-outline" data-filter="todos">Todos</button>
+        <div class="grid grid-4 project-filters" style="margin-bottom:1.8rem;">
+          <button class="btn-outline active" data-filter="todos">Todos</button>
           <button class="btn-outline" data-filter="educacion">Educación</button>
           <button class="btn-outline" data-filter="nutricion">Nutrición</button>
           <button class="btn-outline" data-filter="prevencion">Prevención</button>
           <button class="btn-outline" data-filter="psicosocial">Apoyo psicosocial</button>
         </div>
+
 
         <div class="grid grid-3" id="projectGrid">
           <article class="project-thumb" data-category="nutricion">
@@ -188,18 +189,23 @@
     const cards = document.querySelectorAll("#projectGrid .project-thumb");
 
     filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const category = btn.getAttribute("data-filter");
-        cards.forEach((card) => {
-          const cardCategory = card.getAttribute("data-category");
-          if (category === "todos" || category === cardCategory) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      });
+  btn.addEventListener("click", () => {
+    // highlight: marcar el botón clickeado
+    filterButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // mismo filtro de siempre
+    const category = btn.getAttribute("data-filter");
+    cards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category");
+      if (category === "todos" || category === cardCategory) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
     });
+  });
+});
 
     // lightbox
     const lightbox = document.getElementById("lightbox");

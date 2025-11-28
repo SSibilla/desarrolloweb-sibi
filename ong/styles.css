@@ -616,3 +616,20 @@ footer {
 
 /* en PC el layout de las opciones sigue siendo horizontal
    gracias a .navbar ul { display:flex; ... } */
+
+   /* Filtros de proyectos */
+
+/* centrado del grupo; cuando salta de línea, la fila de abajo también se centra */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* resaltado del filtro activo (misma base que .btn-outline, solo cambia color) */
+.btn-outline.active {
+  border-color: #f5d142;
+  background: #111827;
+  color: #f9fafb;
+}
