@@ -508,6 +508,36 @@ footer {
   text-decoration: none;
 }
 
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;   /* para centrar verticalmente todo */
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.back-to-top {
+  margin-left: auto;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.back-to-top:hover {
+  background: #111827;
+  border-color: #f5d142;
+  color: #f9fafb;
+}
+
+
 /* HERO – SLIDER (sobre-escribe parte del hero anterior) */
 
 .hero {
