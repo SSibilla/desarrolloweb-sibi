@@ -326,22 +326,38 @@ header {
   padding: 1.5rem;
 }
 
+/* CONTENEDOR UN POCO MÁS CHICO EN ESCRITORIO */
 .lightbox-content {
-  max-width: 900px;
+  max-width: 700px;   /* antes 900px */
   width: 100%;
-  max-height: 90vh;
+  max-height: 80vh;   /* antes 90vh */
   overflow-y: auto;
   background: #020617;
   border-radius: 0.75rem;
   border: 1px solid #111827;
-  padding: 1rem;
+  padding: 0.9rem;
 }
 
 .lightbox-content img {
   width: 100%;
+  max-height: 60vh;   /* limita el alto de la foto */
+  object-fit: cover;
   border-radius: 0.6rem;
   margin-bottom: 0.7rem;
 }
+
+/* EN CELULAR QUE SIGA OCUPANDO CASI TODO EL ANCHO */
+@media (max-width: 768px) {
+  .lightbox-content {
+    max-width: 100%;
+    max-height: 90vh;
+  }
+
+  .lightbox-content img {
+    max-height: 70vh;
+  }
+}
+
 
 .lightbox-close {
   display: inline-block;
